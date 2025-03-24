@@ -1,0 +1,3559 @@
+/* 中国风网页样式 - 自在美丽APP */
+
+/* 基础样式设置 */
+:root {
+    /* 中国风配色方案 */
+    --primary-color: #8C2318; /* 中国红 */
+    --secondary-color: #D4A76A; /* 古铜金 */
+    --accent-color: #3A5169; /* 青蓝色 */
+    --light-color: #F7F3E9; /* 米白色 */
+    --dark-color: #2C1E1E; /* 深褐色 */
+    --success-color: #7A8B50; /* 青竹绿 */
+    --warning-color: #D9B166; /* 金黄色 */
+    
+    /* 字体变量 */
+    --body-font: 'Noto Serif SC', serif;
+    --heading-font: 'Noto Serif SC', serif;
+    
+    /* 间距变量 */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    
+    /* 边框圆角 */
+    --border-radius: 4px;
+    
+    /* 阴影 */
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 重置样式 */
+/* 基本样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f5f5;
+    background-image: url('images/rice-paper.png'); /* 添加米纸纹理背景 */
+    padding-top: 80px; /* 为固定导航栏腾出空间 */
+}
+
+.intro-image img {
+    width: 100%;
+    height: 400px;  /* 设置固定高度 */
+    object-fit: cover;  /* 保持图片比例并填充容器 */
+    border-radius: var(--border-radius);
+    transition: transform 0.3s ease;
+}
+
+.intro-image img:hover {
+    transform: scale(1.02);  /* 添加悬停效果 */
+}
+
+.news-image img {
+    width: 100%;
+    height: 250px;  /* 新闻图片的固定高度 */
+    object-fit: cover;
+    border-radius: var(--border-radius);
+}
+
+.community-image img {
+    width: 100%;
+    height: 300px;  /* 社区图片的固定高度 */
+    object-fit: cover;
+    border-radius: var(--border-radius);
+}
+
+/* 确保所有图片都有基础样式 */
+.rounded-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* ... 后面的代码保持不变 ... */
+
+/* 中国风特有样式 */
+.chinese-style {
+    background-color: var(--light-color);
+}
+
+/* 登录和注册表单样式 */
+.login-container,
+.register-container {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.login-form,
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+.form-group input {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.form-group small {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.form-links {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.forgot-password {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* 添加其他样式 */
+
+/* 容器样式 */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* 排版样式 */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-color);
+}
+
+p {
+    margin-bottom: var(--spacing-md);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+ul {
+    list-style-type: none;
+    margin-left: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+ul li {
+    position: relative;
+    padding-left: var(--spacing-md);
+    margin-bottom: var(--spacing-xs);
+}
+
+ul li:before {
+    content: "•";
+    color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+}
+
+/* 按钮样式 */
+.btn {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-family: var(--body-font);
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    border: 1px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--dark-color);
+    border: 1px solid var(--secondary-color);
+}
+
+.btn-secondary:hover {
+    background-color: transparent;
+    color: var(--secondary-color);
+}
+
+/* 季节性页面头部样式 */
+.season-header {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.spring-header {
+    background-color: #4CAF50; /* 春季绿色 */
+    background-image: linear-gradient(to right, #4CAF50, #8BC34A);
+}
+
+.summer-header {
+    background-color: #2196F3; /* 夏季蓝色 */
+    background-image: linear-gradient(to right, #2196F3, #03A9F4);
+}
+
+.autumn-header {
+    background-color: #FF9800; /* 秋季橙色 */
+    background-image: linear-gradient(to right, #FF9800, #F57C00);
+}
+
+.winter-header {
+    background-color: #3F51B5; /* 冬季靛蓝色 */
+    background-image: linear-gradient(to right, #3F51B5, #5C6BC0);
+}
+
+/* 季节性饮食建议样式 */
+.seasonal-diet {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--light-color);
+}
+
+.seasonal-diet .section-desc {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-lg);
+    color: var(--dark-color);
+}
+
+.season-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.season-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.season-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.season-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.season-card h3 {
+    color: var(--primary-color);
+    margin: var(--spacing-md) var(--spacing-md) var(--spacing-sm);
+}
+
+.season-card p {
+    padding: 0 var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    color: var(--dark-color);
+    font-size: 0.95rem;
+}
+
+.season-card .btn {
+    margin: 0 var(--spacing-md) var(--spacing-md);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+    background-image: linear-gradient(to right, #3F51B5, #5C6BC0);
+}
+
+/* 头部样式 */
+.header {
+    padding: var(--spacing-md) 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    position: fixed; /* 改为fixed确保在所有浏览器中都能固定 */
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000; /* 提高z-index确保在其他元素上方 */
+    border-bottom: 2px solid var(--secondary-color);
+    transition: all 0.3s ease; /* 添加平滑过渡效果 */
+}
+
+/* 滚动时导航栏样式 */
+.header.scrolled {
+    padding: calc(var(--spacing-md) * 0.7) 0;
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 2rem;
+    margin-bottom: 0;
+    color: var(--primary-color);
+}
+
+.slogan {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    margin-bottom: 0;
+}
+
+/* 导航样式 */
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    margin: 0;
+}
+
+.nav-list li {
+    margin-left: var(--spacing-md);
+    padding-left: 0;
+}
+
+.nav-list li:before {
+    content: none;
+}
+
+.nav-list a {
+    padding: 0.5rem;
+    color: var(--dark-color);
+    position: relative;
+}
+
+.nav-list a:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-list a:hover:after,
+.nav-list a.active:after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--dark-color);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* 中国风横幅 */
+.chinese-banner {
+    background-image: url('images/chinese-landscape.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 6rem 0;
+    position: relative;
+}
+
+.chinese-banner:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.banner-content {
+    position: relative;
+    z-index: 1;
+}
+
+.chinese-heading {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.chinese-subheading {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 每日鼓励语区域 */
+.daily-quote {
+    padding: var(--spacing-xl) 0;
+}
+
+.quote-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    border-left: 4px solid var(--secondary-color);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.quote-card h2 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.8rem;
+}
+
+blockquote {
+    font-style: italic;
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-lg);
+    color: var(--dark-color);
+}
+
+/* 应用介绍区域 */
+.app-intro {
+    padding: var(--spacing-xl) 0;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    position: relative;
+    font-size: 2rem;
+}
+
+.section-title:after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    margin: var(--spacing-sm) auto 0;
+}
+
+.intro-content {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xl);
+}
+
+.intro-text {
+    flex: 1;
+}
+
+.intro-image {
+    flex: 1;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+.intro-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 功能区域 */
+.features {
+    padding: var(--spacing-xl) 0;
+    background-color: rgba(212, 167, 106, 0.1);
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.feature-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    transition: transform 0.3s ease;
+    border-top: 3px solid var(--secondary-color);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.feature-card h3 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-color);
+}
+
+.feature-card p {
+    margin-bottom: var(--spacing-lg);
+    color: var(--dark-color);
+}
+
+/* 用户故事区域 */
+.success-stories {
+    padding: var(--spacing-xl) 0;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.story-carousel {
+    max-width: 800px;
+    margin: 0 auto var(--spacing-lg);
+}
+
+.story-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    box-shadow: var(--box-shadow);
+    border-left: 4px solid var(--primary-color);
+}
+
+.story-text {
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.story-author {
+    text-align: right;
+    font-weight: 500;
+    color: var(--accent-color);
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+}
+
+.carousel-prev,
+.carousel-next {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    background-color: var(--primary-color);
+}
+
+/* 加入社区区域 */
+.join-community {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--accent-color);
+    color: white;
+    text-align: center;
+}
+
+.join-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.join-content h2 {
+    color: white;
+    margin-bottom: var(--spacing-md);
+}
+
+.join-content p {
+    margin-bottom: var(--spacing-lg);
+}
+
+/* 页脚 */
+.footer {
+    padding: var(--spacing-xl) 0 var(--spacing-lg);
+    background-color: var(--dark-color);
+    color: white;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+.footer-logo h2 {
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer-links h3,
+.footer-newsletter h3 {
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.2rem;
+}
+
+.footer-links ul {
+    margin-left: 0;
+}
+
+.footer-links li {
+    padding-left: 0;
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer-links li:before {
+    content: none;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-links a:hover {
+    color: var(--secondary-color);
+}
+
+.newsletter-form {
+    display: flex;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 0.6rem;
+    border: none;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+}
+
+.newsletter-form button {
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 响应式设计 - 续 */
+@media (max-width: 768px) {
+    .nav-list {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background-color: white;
+        flex-direction: column;
+        padding: var(--spacing-xl) var(--spacing-lg);
+        transition: right 0.3s ease;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+    
+    .nav-list.active {
+        right: 0;
+    }
+    
+    .form-row {
+        flex-direction: column;
+    }
+    
+    .tool-grid,
+    .recipe-grid,
+    .season-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-content {
+        flex-direction: column;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 20% auto;
+    }
+    
+    .menu-toggle {
+        display: block;
+        z-index: 1001;
+    }
+    
+    body.menu-open {
+        overflow: hidden;
+    }
+}
+
+/* 社区互动页面样式 */
+.community-events {
+    padding: var(--spacing-xl) 0;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.event-card {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+.event-image {
+    height: 180px;
+    overflow: hidden;
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover .event-image img {
+    transform: scale(1.05);
+}
+
+.event-content {
+    padding: var(--spacing-lg);
+}
+
+.event-date {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.9rem;
+}
+
+.event-location {
+    color: var(--accent-color);
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.9rem;
+}
+
+/* 职业健康专区样式 */
+.occupation-health {
+    padding: var(--spacing-xl) 0;
+    background-color: rgba(212, 167, 106, 0.1);
+}
+
+.occupation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.occupation-card {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    box-shadow: var(--box-shadow);
+    border-top: 3px solid var(--accent-color);
+}
+
+.occupation-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+    color: var(--accent-color);
+}
+
+/* 四季养生标签样式 */
+.season-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 0.6rem 1.5rem;
+    background-color: transparent;
+    border: 1px solid var(--secondary-color);
+    color: var(--dark-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 5px 10px;
+    border-radius: var(--border-radius);
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.season-content {
+    display: none;
+}
+
+.season-content.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+/* 食谱详情模态框样式 */
+.recipe-detail-image {
+    margin-bottom: var(--spacing-md);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.recipe-detail-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.recipe-ingredients,
+.recipe-steps,
+.recipe-benefits {
+    margin-bottom: var(--spacing-lg);
+}
+
+.recipe-ingredients h4,
+.recipe-steps h4,
+.recipe-benefits h4 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.2rem;
+}
+
+/* 压力测试滑块样式 */
+.stress-slider {
+    width: 100%;
+    margin: var(--spacing-md) 0;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.stress-value {
+    font-weight: bold;
+    color: var(--primary-color);
+    min-width: 30px;
+    text-align: center;
+}
+
+/* 动画效果 */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 中医体质测试按钮 */
+.tcm-test-btn {
+    display: block;
+    max-width: 300px;
+    margin: var(--spacing-lg) auto;
+    text-align: center;
+    padding: 1rem 2rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: var(--box-shadow);
+}
+
+.tcm-test-btn:hover {
+    background-color: var(--dark-color);
+    transform: translateY(-3px);
+}
+
+/* 社交分享按钮 */
+.social-share {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.share-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.share-btn:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* 错误修复和优化 */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* 修复移动端菜单 */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        z-index: 1001;
+    }
+    
+    body.menu-open {
+        overflow: hidden;
+    }
+}
+
+/* 修复图片加载错误样式 */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+img[src=""] {
+    display: none;
+}
+
+/* 添加打印样式 */
+@media print {
+    .header,
+    .footer,
+    .btn,
+    .menu-toggle {
+        display: none;
+    }
+    
+    body {
+        background: white;
+        font-size: 12pt;
+        color: black;
+    }
+    
+    .container {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+/* 饮食页面样式 */
+.diet-banner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/diet-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.meal-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.meal-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.meal-card:hover {
+    transform: translateY(-5px);
+}
+
+.meal-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.meal-card h3 {
+    padding: 1rem;
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.meal-card p {
+    padding: 0 1rem;
+    color: var(--dark-color);
+}
+
+.calories {
+    display: block;
+    padding: 1rem;
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+.guide-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.guide-item {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.guide-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.food-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.category-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.category-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.category-card h3 {
+    padding: 1rem;
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.category-card ul {
+    padding: 0 1rem 1rem;
+    margin: 0;
+}
+
+.category-card li {
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .meal-cards,
+    .guide-content,
+    .food-categories {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 新增食谱卡片样式 */
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.recipe-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+}
+
+.recipe-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.recipe-image {
+    height: 200px;
+    overflow: hidden;
+}
+.recipe-content {
+    padding: 1.5rem;
+}
+
+.recipe-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    color: var(--accent-color);
+}
+
+/* 营养知识卡片样式 */
+.knowledge-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.knowledge-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.knowledge-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.knowledge-card ul {
+    margin-top: 1rem;
+}
+
+/* 饮食误区卡片样式 */
+.myths-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.myth-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    border-left: 4px solid var(--primary-color);
+}
+
+/* 个性化饮食建议样式 */
+.diet-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.diet-category {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.diet-category h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.diet-category ul {
+    margin-left: 1rem;
+}/* 运动页面样式 */
+.exercise-banner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/exercise-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.exercise-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.exercise-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+}
+
+.exercise-card:hover {
+    transform: translateY(-5px);
+}
+
+.exercise-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.exercise-content {
+    padding: 1.5rem;
+}
+
+.exercise-info {
+    list-style: none;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.exercise-info li {
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.exercise-info li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--success-color);
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.category-item {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+}
+
+.category-item:hover {
+    transform: translateY(-5px);
+}
+
+.category-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.category-item h3 {
+    padding: 1rem;
+    margin: 0;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.category-item ul {
+    padding: 0 1rem 1rem;
+    margin: 0;
+    text-align: center;
+}
+
+.plan-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.plan-text {
+    padding: 2rem;
+}
+
+.plan-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .plan-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .exercise-cards,
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+}/* 心理支持页面样式 */
+.mental-banner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/mental-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.service-content {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.assessment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.assessment-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    border-top: 3px solid var(--accent-color);
+}
+
+.meditation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.meditation-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.meditation-card:hover {
+    transform: translateY(-5px);
+}
+
+.meditation-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.meditation-card h3 {
+    margin: 1rem 0;
+    color: var(--primary-color);
+}
+
+.meditation-card p {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .service-grid,
+    .assessment-grid,
+    .meditation-grid {
+        grid-template-columns: 1fr;
+    }
+}/* 社区页面样式 */
+.community-banner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/community-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.story-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+}
+
+.story-card:hover {
+    transform: translateY(-5px);
+}
+
+.story-image {
+    height: 300px;
+    overflow: hidden;
+}
+
+.story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.story-content {
+    padding: 1.5rem;
+}
+
+.qa-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.qa-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: var(--box-shadow);
+}
+
+.expert-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.expert-info img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.topic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.topic-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+
+.topic-stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem 0;
+    color: var(--accent-color);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .story-grid,
+    .qa-grid,
+    .topic-grid {
+        grid-template-columns: 1fr;
+    }
+}/* 个人档案页面样式 */
+.profile-overview {
+    padding: 2rem 0;
+    background-color: var(--light-color);
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.profile-avatar {
+    text-align: center;
+}
+
+.profile-avatar img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-bio {
+    color: var(--accent-color);
+    margin: 1rem 0;
+}
+
+.profile-stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.tracking-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.tracking-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.data-chart {
+    margin: 1rem 0;
+}
+
+.data-chart img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.data-list {
+    margin: 1rem 0;
+}
+
+.data-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.achievement-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+
+.achievement-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+}
+
+.advice-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.advice-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+
+.advice-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-stats {
+        justify-content: center;
+    }
+}/* 数据记录卡片样式 */
+.data-record-card {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+}
+
+.data-group {
+    margin-bottom: 2rem;
+}
+
+.data-group h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.data-input-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.data-input-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.data-input-item label {
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+    font-size: 0.9rem;
+}
+
+.data-input-item input {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+}
+
+.data-input-item input:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+}
+
+.data-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* 数据展示样式 */
+.data-history {
+    margin-top: 2rem;
+}
+
+.data-chart {
+    background: white;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin-top: 1rem;
+}/* 健康目标样式 */
+.goals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.goal-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.goal-progress {
+    background: #f0f0f0;
+    border-radius: 10px;
+    height: 20px;
+    margin: 1rem 0;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--success-color);
+    color: white;
+    text-align: center;
+    line-height: 20px;
+    font-size: 0.8rem;
+    transition: width 0.3s ease;
+}
+
+.editable-field {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.edit-btn {
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.edit-btn:hover {
+    color: var(--primary-color);
+}/* 健康目标样式 */
+.goals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.goal-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.goal-progress {
+    background: #f0f0f0;
+    border-radius: 10px;
+    height: 20px;
+    margin: 1rem 0;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--success-color);
+    color: white;
+    text-align: center;
+    line-height: 20px;
+    font-size: 0.8rem;
+    transition: width 0.3s ease;
+}
+
+.editable-field {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.edit-btn {
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.edit-btn:hover {
+    color: var(--primary-color);
+}/* 健康计算器样式 */
+.health-calculator {
+    padding: 4rem 0;
+    background-color: var(--light-color);
+}
+
+.calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.calculator-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.calculator-form {
+    margin-top: 1.5rem;
+}
+
+.input-group {
+    margin-bottom: 1rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+}
+
+.result {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f5f5f5;
+    border-radius: var(--border-radius);
+    text-align: center;
+    font-weight: bold;
+}
+
+.result.success {
+    color: var(--success-color);
+    background: rgba(122, 139, 80, 0.1);
+}
+
+.result.warning {
+    color: var(--warning-color);
+    background: rgba(217, 177, 102, 0.1);
+}/* 计时器样式 */
+.timer-container {
+    text-align: center;
+    padding: 1rem;
+}
+
+.timer-display {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 1rem 0;
+    font-family: monospace;
+    color: var(--primary-color);
+}
+
+.timer-controls {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.timer-presets {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+}
+
+.timer-presets button {
+    padding: 0.5rem;
+    border: 1px solid var(--accent-color);
+    border-radius: var(--border-radius);
+    background: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.timer-presets button:hover {
+    background: var(--accent-color);
+    color: white;
+}/* 计时器卡片样式 */
+.timer-card {
+    background: linear-gradient(145deg, #ffffff, #f5f5f5);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.timer-container {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.timer-display {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.time-value {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 0.5rem;
+}
+
+.timer-label {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.timer-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.timer-btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.timer-btn.start {
+    background: var(--success-color);
+    color: white;
+}
+
+.timer-btn.pause {
+    background: var(--warning-color);
+    color: white;
+}
+
+.timer-btn.reset {
+    background: var(--accent-color);
+    color: white;
+}
+
+.timer-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.timer-presets {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+}
+
+.preset-btn {
+    padding: 0.8rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--primary-color);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.preset-btn:hover {
+    background: var(--primary-color);
+    color: white;
+}/* 联系页面样式 */
+.contact-banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/contact-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.contact-content {
+    padding: 4rem 0;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.contact-info {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.info-item h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--primary-color);
+}
+
+.info-item p {
+    margin: 0;
+    color: var(--text-color);
+}
+
+.contact-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.map-container {
+    margin-top: 3rem;
+}
+
+.map {
+    height: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+.placeholder-map {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}/* 计时器样式 */
+.timer-card {
+    background: linear-gradient(145deg, #ffffff, #f5f5f5);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    margin: 2rem 0;
+}
+
+.timer-display {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.time-value {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.timer-label {
+    font-size: 1rem;
+    color: var(--accent-color);
+    margin-top: 0.5rem;
+}
+
+.timer-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.timer-btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.timer-btn.start {
+    background: var(--success-color);
+    color: white;
+}
+
+.timer-btn.pause {
+    background: var(--warning-color);
+    color: white;
+}
+
+.timer-btn.reset {
+    background: var(--accent-color);
+    color: white;
+}
+
+.timer-presets {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+}
+
+.preset-btn {
+    padding: 0.8rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--primary-color);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.preset-btn:hover {
+    background: var(--primary-color);
+    color: white;
+}/* 运动页面样式 */
+.exercise-hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/exercise-bg.jpg');
+    background-size: cover;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.category-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.category-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.category-card h3 {
+    margin: 1rem;
+}
+
+.category-card p {
+    margin: 1rem;
+    color: #666;
+}
+
+.category-card .btn {
+    margin: 1rem;
+    display: block;
+    text-align: center;
+}
+
+/* 运动教程详情页样式 */
+.exercise-detail {
+    padding: 2rem 0;
+}
+
+.exercise-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.step-item {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.step-item img {
+    width: 100%;
+    border-radius: 10px;
+}/* ... 保持现有的变量定义 ... */
+
+/* 修复背景颜色声明 */
+body {
+    font-family: var(--body-font);
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: #f9f5f0;
+    background-image: url('images/rice-paper.png');
+    background-repeat: repeat;
+    background-position: center;
+}
+
+/* 添加响应式设计 */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* 修复样式冲突 */
+.chinese-style {
+    background-color: var(--light-color);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* 添加缺失的必要样式 */
+.section-title {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: var(--spacing-sm) auto 0;
+}
+
+/* 添加动画效果 */
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* 添加樱花动画样式 */
+.sakura {
+    position: absolute;
+    background-color: #ffd7e6;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0.6;
+    transition: transform 0.3s ease;
+}
+
+/* 添加图片样式 */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+}
+
+.rounded-image {
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+}
+
+/* 添加卡片悬停效果 */
+.news-card,
+.feature-card,
+.tip-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover,
+.feature-card:hover,
+.tip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 添加加载动画 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease forwards;
+}/* ... 保持现有的变量定义 ... */
+
+/* 修复背景颜色声明 */
+body {
+    font-family: var(--body-font);
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: #f9f5f0;
+    background-image: url('images/rice-paper.png');
+    background-repeat: repeat;
+    background-position: center;
+}
+
+/* 添加响应式设计 */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* 修复样式冲突 */
+.chinese-style {
+    background-color: var(--light-color);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* 添加缺失的必要样式 */
+.section-title {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: var(--spacing-sm) auto 0;
+}
+
+/* 添加动画效果 */
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* 添加樱花动画样式 */
+.sakura {
+    position: absolute;
+    background-color: #ffd7e6;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0.6;
+    transition: transform 0.3s ease;
+}
+
+/* 添加图片样式 */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+}
+
+.rounded-image {
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+}
+
+/* 添加卡片悬停效果 */
+.news-card,
+.feature-card,
+.tip-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover,
+.feature-card:hover,
+.tip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 添加加载动画 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease forwards;
+}/* 敏感肌肤护理页面样式 */
+.skin-care-section {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--light-color);
+    background-image: url('images/rice-paper.png');
+    background-repeat: repeat;
+}
+
+.skin-care-card {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+    border-left: 4px solid var(--primary-color);
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.skin-care-card:hover {
+    transform: translateY(-5px);
+}
+
+.skin-care-title {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.care-method-list {
+    list-style: none;
+    padding: 0;
+}
+
+.care-method-list li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--dark-color);
+}
+
+.care-method-list li::before {
+    content: "•";
+    color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+.treatment-section {
+    margin-top: 2rem;
+}
+
+.treatment-title {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.treatment-tips {
+    background: rgba(140, 35, 24, 0.05);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin-top: 1rem;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .skin-care-card {
+        padding: 1.5rem;
+    }
+}/* 中国风网页样式 - 自在美丽APP */
+
+/* 基础样式设置 */
+:root {
+    /* 中国风配色方案 */
+    --primary-color: #8C2318; /* 中国红 */
+    --secondary-color: #D4A76A; /* 古铜金 */
+    --accent-color: #3A5169; /* 青蓝色 */
+    --light-color: #F7F3E9; /* 米白色 */
+    --dark-color: #2C1E1E; /* 深褐色 */
+    --success-color: #7A8B50; /* 青竹绿 */
+    --warning-color: #D9B166; /* 金黄色 */
+    
+    /* 字体变量 */
+    --body-font: 'Noto Serif SC', serif;
+    --heading-font: 'Noto Serif SC', serif;
+    
+    /* 间距变量 */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    
+    /* 边框圆角 */
+    --border-radius: 4px;
+    
+    /* 阴影 */
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 全局样式 */
+body {
+    font-family: var(--body-font);
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: #f9f5f0;
+    background-image: url('images/rice-paper.png');
+    background-repeat: repeat;
+    background-position: center;
+}
+
+/* 通用动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .nav-list {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background-color: white;
+        flex-direction: column;
+        padding: var(--spacing-xl) var(--spacing-lg);
+        transition: right 0.3s ease;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+    
+    .nav-list.active {
+        right: 0;
+    }
+    
+    .menu-toggle {
+        display: block;
+        z-index: 1001;
+    }
+    
+    body.menu-open {
+        overflow: hidden;
+    }
+    
+    .grid-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 打印样式 */
+@media print {
+    .header,
+    .footer,
+    .btn,
+    .menu-toggle {
+        display: none;
+    }
+    
+    body {
+        background: white;
+        font-size: 12pt;
+        color: black;
+    }
+    
+    .container {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+/* ... 其他样式保持不变 ... *//* 添加图片基础样式 */
+img {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16/9; /* 添加默认宽高比 */
+}
+
+/* 修复轮播图区域 */
+.story-carousel {
+    min-height: 200px; /* 设置最小高度 */
+    position: relative;
+}
+
+.story-card {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.story-card.active {
+    opacity: 1;
+}
+
+/* 修复新闻卡片样式 */
+.news-card {
+    display: grid;
+    grid-template-rows: 200px 1fr; /* 固定图片容器高度 */
+    height: 100%;
+}
+
+.news-image {
+    overflow: hidden;
+    width: 100%;
+    height: 200px; /* 固定高度 */
+}
+
+.news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 添加内容占位样式 */
+.content-placeholder {
+    min-height: 100px;
+    background: var(--light-color);
+}
+
+/* 修复字体加载问题 */
+html {
+    font-display: swap; /* 优化字体加载策略 */
+}
+
+/* 修复季节切换内容 */
+.season-content {
+    min-height: 400px; /* 设置最小高度 */
+}
+
+/* 修复职业健康卡片 */
+.occupation-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.occupation-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+}/* 添加计时器样式 */
+.timer-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.timer-display {
+    font-size: 3rem;
+    font-family: monospace;
+    margin: 1rem 0;
+    color: var(--primary-color);
+}
+
+.timer-label {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.timer-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.timer-btn {
+    min-width: 80px;
+}
+
+.timer-presets {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+}
+
+.preset-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+}/* 添加计时器样式 */
+.timer-container {
+    padding: 1rem;
+    text-align: center;
+}
+
+.timer-display {
+    font-size: 2.5rem;
+    font-family: monospace;
+    margin: 1rem 0;
+    color: var(--primary-color);
+}
+
+.timer-controls {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.timer-presets {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.timer-label {
+    color: var(--accent-color);
+    margin: 0.5rem 0;
+}/* ... 前面的代码保持不变 ... */
+
+.timer-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.timer-display {
+    font-size: 3rem;
+    font-family: monospace;
+    margin: 1rem 0;
+    color: var(--primary-color);
+}
+
+.timer-label {
+    color: var(--accent-color);
+    margin-bottom: 1rem;.community-news {
+    margin-top: 2rem;
+    padding: 2rem 0;
+    border-top: 1px solid #eee;
+}
+
+.communi/* ... 前面的代码保持不变 ... */
+
+/* 删除以下部分 */
+/* .community-news {
+    margin-top: 2rem;
+    padding: 2rem 0;
+    border-top: 1px solid #eee;
+}
+
+.community-news h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.join-community .news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.join-community .news-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.join-community .news-card:hover {
+    transform: translateY(-5px);
+} */
+
+/* ... 后面的代码保持不变 ... */<section class="community-news">
+    <!-- 删除这部分内容 -->
+</section>ty-news h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.join-community .news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.join-community .news-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.join-community ./* 职业健康专区图片样式优化 */
+.occupation-icon {
+    width: 240px;  /* 增加图片尺寸 */
+    height: 240px;
+    margin: 0 auto 1.5rem;
+    overflow: hidden;
+    border-radius: 12px;  /* 稍微增加圆角 */
+}
+
+.occupation-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.occupation-icon img:hover {
+    transform: scale(1.05);
+}
+
+.occupation-card {
+    text-align: center;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.occupation-card:hover {
+    transform: translateY(-5px);
+}/* 职业健康方案页面样式 */
+.occupation-detail {
+    padding: 3rem 0;
+    background-color: var(--light-color);
+}
+
+.detail-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.intro-section {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.detail-image {
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--box-shadow);
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.problems-section {
+    margin-bottom: 3rem;
+}
+
+.problem-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 0;
+    list-style: none;
+}
+
+.problem-list li {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+}
+
+.problem-list h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.solution-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.solution-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.solution-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.solution-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.solution-card li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.solution-card li::before {
+    content: "•";
+    color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+.tips-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.tip-item {
+    background: rgba(140, 35, 24, 0.05);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+}
+
+.tip-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .detail-image {
+        height: 250px;
+    }
+
+    .problem-list,
+    .solution-cards,
+    .tips-content {
+        grid-template-columns: 1fr;
+    }
+
+    .solution-card,
+    .tip-item {
+        padding: 1rem;
+    }
+}/* 健康小贴士卡片样式优化 */
+./* 职业健康子页面样式 */
+.occupation-detail {
+    padding: 4rem 0;
+    background: var(--light-color);
+}
+
+.detail-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.intro-section {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.detail-image {
+    flex: 1;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+}
+
+.intro-text {
+    flex: 1;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+.problems-section,
+.solutions-section,
+.daily-tips {
+    margin-bottom: 4rem;
+}
+
+.problem-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.problem-list li {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+}
+
+.problem-list li:hover {
+    transform: translateY(-5px);
+}
+
+.solution-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.solution-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+
+.solution-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.solution-card ul {
+    text-align: left;
+}
+
+.tips-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.tip-item {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+}
+
+.tip-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* 响应式调整 */
+@media (max-width: 992px) {
+    .intro-section {
+        flex-direction: column;
+    }
+    
+    .problem-list,
+    .solution-cards,
+    .tips-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .problem-list,
+    .solution-cards,
+    .tips-content {
+        grid-template-columns: 1fr;
+    }
+}news-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.news-image {
+    width: 100%;
+    height: 180px;  /* 减小图片高度 */
+    overflow: hidden;
+    position: relative;
+}
+
+.news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.news-content {
+    padding: 1.2rem;
+    flex-grow: 1;
+}
+
+/* 优化图片悬停效果 */
+.news-card:hover .news-image img {
+    transform: scale(1.05);
+}news-card:hover {
+    transform: translateY(-5px);
+}
+}
+
+.timer-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.timer-btn {
+    min-width: 80px;
+}
+
+.timer-presets {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+}
+
+.preset-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+}
+
+/* ... 后面的代码保持不变 ... *//* ... 前面的代码保持不变 ... */
+
+.timer-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.timer-display {
+    font-size: 3rem;
+    font-family: monospace;
+    margin: 1rem 0;
+    color: var(--primary-color);
+}
+
+.timer-label {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.timer-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.timer-btn {
+    min-width: 80px;
+}
+
+.timer-presets {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+}
+
+.preset-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+}
+
+/* ... 后面的代码保持不变 ... *//* ... 其他样式 ... */
+
+.news-image {
+    width: 100%;
+    height: 240px;  /* 固定高度，保持一致性 */
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* 保持图片比例并填充容器 */
+    transition: transform 0.3s ease;  /* 添加平滑过渡效果 */
+}
+
+/* 可选：添加鼠标悬停效果 */
+.news-image img:hover {
+    transform: scale(1.05);  /* 轻微放大效果 */
+}
+
+/* 确保新闻卡片布局合理 */
+.news-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.news-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+}/* ... 现有代码 ... */
+
+/* 职业健康专区子页面样式 */
+.occupation-hero {
+    position: relative;
+    padding: 6rem 0;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.occupation-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.occupation-hero p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.occupation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 3rem 0;
+}
+
+.occupation-feature {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+}
+
+.occupation-feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.feature-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.occupation-feature:hover .feature-image img {
+    transform: scale(1.05);
+}
+
+.feature-content {
+    padding: 1.5rem;
+}
+
+.feature-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.feature-content p {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.occupation-tips {
+    background: rgba(140, 35, 24, 0.05);
+    padding: 3rem 0;
+    margin: 2rem 0;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.tip-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    border-left: 4px solid var(--primary-color);
+}
+
+.tip-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.tip-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.tip-card li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.tip-card li::before {
+    content: "✓";
+    color: var(--success-color);
+    position: absolute;
+    left: 0;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .occupation-hero {
+        padding: 4rem 0;
+    }
+
+    .occupation-hero h1 {
+        font-size: 2rem;
+    }
+
+    .occupation-grid,
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+}

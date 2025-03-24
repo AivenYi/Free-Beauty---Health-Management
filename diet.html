@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>健康饮食 - 自在美丽</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="chinese-style">
+    <!-- 页面头部 -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>自在美丽</h1>
+                <p class="slogan">美丽源于自信，健康成就美丽</p>
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="打开菜单">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="profile.html">个人档案</a></li>
+                    <li><a href="diet.html" class="active">健康饮食</a></li>
+                    <li><a href="exercise.html">健康锻炼</a></li>
+                    <li><a href="mental.html">心理支持</a></li>
+                    <li><a href="community.html">社区互动</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 饮食页面横幅 -->
+        <section class="page-banner diet-banner">
+            <div class="container">
+                <h1>科学饮食，健康生活</h1>
+                <p>基于中医养生理论，为您提供个性化的饮食建议</p>
+            </div>
+        </section>
+
+        <!-- 今日推荐 -->
+        <section class="daily-recommendation">
+            <div class="container">
+                <h2 class="section-title">今日营养餐推荐</h2>
+                <div class="meal-cards">
+                    <div class="meal-card">
+                        <img src="images\ad0028a079f09a3ea3d9f7c31630c61.jpg" alt="健康早餐" onerror="this.src='https://via.placeholder.com/300x200/FFB6C1/000000?text=营养早餐'">
+                        <h3>早餐</h3>
+                        <p>全麦面包 + 煮鸡蛋 + 牛奶 + 水果沙拉</p>
+                        <span class="calories">热量：350千卡</span>
+                    </div>
+                    <div class="meal-card">
+                        <img src="images\5fedb3525077bbad98e3b5f6c01ecc0.jpg" alt="健康午餐" onerror="this.src='https://via.placeholder.com/300x200/98FB98/000000?text=营养午餐'">
+                        <h3>午餐</h3>
+                        <p>糙米饭 + 清炒时蔬 + 蒸鱼 + 番茄蛋汤</p>
+                        <span class="calories">热量：450千卡</span>
+                    </div>
+                    <div class="meal-card">
+                        <img src="images\5ac0ce885e19f13ab0509178e6b9105.jpg" alt="健康晚餐" onerror="this.src='https://via.placeholder.com/300x200/87CEEB/000000?text=营养晚餐'">
+                        <h3>晚餐</h3>
+                        <p>藜麦沙拉 + 鸡胸肉 + 南瓜汤</p>
+                        <span class="calories">热量：400千卡</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 饮食指南 -->
+        <section class="diet-guide">
+            <div class="container">
+                <h2 class="section-title">健康饮食指南</h2>
+                <div class="guide-content">
+                    <div class="guide-item">
+                        <img src="images\屏幕截图 2025-03-23 090333.png" alt="均衡饮食" onerror="this.src='https://via.placeholder.com/400x300/F0E68C/000000?text=均衡饮食'">
+                        <h3>均衡营养</h3>
+                        <p>每餐应包含谷物、蛋白质、蔬菜、水果等多种食物，保证营养均衡。</p>
+                    </div>
+                    <div class="guide-item">
+                        <img src="images\屏幕截图 2025-03-23 090614.png" alt="适量饮食" onerror="this.src='https://via.placeholder.com/400x300/DDA0DD/000000?text=适量饮食'">
+                        <h3>适量原则</h3>
+                        <p>控制每餐食量，细嚼慢咽，避免暴饮暴食。</p>
+                    </div>
+                    <div class="guide-item">
+                        <img src="images\屏幕截图 2025-03-23 090709.png" alt="规律进餐" onerror="this.src='https://via.placeholder.com/400x300/20B2AA/000000?text=规律进餐'">
+                        <h3>规律进餐</h3>
+                        <p>保持规律的进餐时间，不要过晚用餐，避免夜宵。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 食材营养库 -->
+        <section class="nutrition-library">
+            <div class="container">
+                <h2 class="section-title">食材营养库</h2>
+                <div class="food-categories">
+                    <div class="category-card">
+                        <img src="images\屏幕截图 2025-03-23 091013.png" alt="蔬菜类" onerror="this.src='https://via.placeholder.com/300x200/90EE90/000000?text=新鲜蔬菜'">
+                        <h3>蔬菜类</h3>
+                        <ul>
+                            <li>深色蔬菜：富含维生素和矿物质</li>
+                            <li>菌菇类：提供优质蛋白和膳食纤维</li>
+                            <li>根茎类：补充碳水化合物和能量</li>
+                        </ul>
+                    </div>
+                    <div class="category-card">
+                        <img src="images\屏幕截图 2025-03-23 091102.png" alt="水果类" onerror="this.src='https://via.placeholder.com/300x200/FFA07A/000000?text=新鲜水果'">
+                        <h3>水果类</h3>
+                        <ul>
+                            <li>柑橘类：补充维生素C</li>
+                            <li>浆果类：富含抗氧化物质</li>
+                            <li>热带水果：提供多种维生素和矿物质</li>
+                        </ul>
+                    </div>
+                    <div class="category-card">
+                        <img src="images\屏幕截图 2025-03-23 091153.png" alt="蛋白质类" onerror="this.src='https://via.placeholder.com/300x200/B8860B/000000?text=优质蛋白'">
+                        <h3>蛋白质类</h3>
+                        <ul>
+                            <li>瘦肉：提供优质蛋白和铁质</li>
+                            <li>鱼类：补充omega-3脂肪酸</li>
+                            <li>豆制品：植物蛋白和异黄酮</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 季节性饮食建议 -->
+        <section class="seasonal-diet">
+            <div class="container">
+                <h2 class="section-title">四季饮食建议</h2>
+                <p class="section-desc">根据中医理论，饮食应当顺应四季变化，调整饮食结构以适应不同季节的气候特点</p>
+                <div class="season-cards">
+                    <div class="season-card spring">
+                        <img src="images/微信图片_20250322125343.jpg" alt="春季饮食" onerror="this.src='https://via.placeholder.com/300x200/98FB98/000000?text=春季饮食'">
+                        <h3>春季饮食</h3>
+                        <p>春季饮食宜清淡，多食用春笋、菠菜等时令蔬菜，少食辛辣，以养肝护肝为主。</p>
+                        <a href="spring-health.html" class="btn btn-outline">了解更多</a>
+                    </div>
+                    <div class="season-card summer">
+                        <img src="images/image1.png" alt="夏季饮食" onerror="this.src='https://via.placeholder.com/300x200/87CEEB/000000?text=夏季饮食'">
+                        <h3>夏季饮食</h3>
+                        <p>夏季饮食宜清热解暑，多食用苦瓜、西瓜等清热食物，注意补充水分，避免过于油腻。</p>
+                        <a href="summer-health.html" class="btn btn-outline">了解更多</a>
+                    </div>
+                    <div class="season-card autumn">
+                        <img src="images/image3.png" alt="秋季饮食" onerror="this.src='https://via.placeholder.com/300x200/FFA07A/000000?text=秋季饮食'">
+                        <h3>秋季饮食</h3>
+                        <p>秋季饮食宜滋阴润燥，多食用梨、百合等润肺食物，适当增加蛋白质摄入，养阴防燥。</p>
+                        <a href="autumn-health.html" class="btn btn-outline">了解更多</a>
+                    </div>
+                    <div class="season-card winter">
+                        <img src="images/2.png" alt="冬季饮食" onerror="this.src='https://via.placeholder.com/300x200/F0E68C/000000?text=冬季饮食'">
+                        <h3>冬季饮食</h3>
+                        <p>冬季饮食宜温补养阳，可适当食用羊肉、栗子等温补食物，注意保暖，增强抵抗力。</p>
+                        <a href="winter-health.html" class="btn btn-outline">了解更多</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>自在美丽</h2>
+                    <p>美丽源于自信，健康成就美丽</p>
+                </div>
+                <div class="footer-links">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="about.html">关于我们</a></li>
+                        <li><a href="contact.html">联系我们</a></li>
+                        <li><a href="privacy.html">隐私政策</a></li>
+                        <li><a href="terms.html">使用条款</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>订阅每周营养知识</h3>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="您的邮箱地址" required>
+                        <button type="submit" class="btn btn-primary">订阅</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 自在美丽. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

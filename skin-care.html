@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个性化皮肤护理 - 自在美丽</title>
+    <style>
+        /* 基础样式 */
+        body {
+            background: linear-gradient(135deg, #fdf5e6 0%, #fff5ee 100%);
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Microsoft YaHei", sans-serif;
+            color: #333;
+        }
+
+        /* 容器样式 */
+        .skin-care-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 皮肤类型选择器 */
+        .skin-type-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        .skin-type-card {
+            width: 200px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            text-align: center;
+            border: 2px solid transparent;
+        }
+
+        .skin-type-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .skin-type-card.active {
+            border-color: #e67e22;
+            background: #fff9f2;
+        }
+
+        .skin-type-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+
+        /* 护理步骤卡片 */
+        .routine-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .step-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 40px;
+            height: 40px;
+            background: #e67e22;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* 产品推荐区域 */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .product-card h5 {
+            color: #e67e22;
+            margin: 15px;
+            font-size: 18px;
+        }
+
+        .product-card p {
+            color: #666;
+            margin: 0 15px 15px;
+            font-size: 14px;
+        }
+
+        .product-card .price {
+            color: #e67e22;
+            font-weight: bold;
+            font-size: 20px;
+            margin: 15px;
+        }
+
+        /* 小贴士区域 */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .tip-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .tip-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .tip-card h4 {
+            color: #e67e22;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        /* 标题样式 */
+        .section-title {
+            text-align: center;
+            color: #e67e22;
+            font-size: 2.5em;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #e67e22;
+            margin: 10px auto;
+        }
+
+        /* 动画效果 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .care-routine {
+            display: none;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .care-routine.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- 删除这一行 -->
+    <!-- <div id="sakura-container"></div> -->
+    <header class="header">
+        <!-- 复用主页的导航栏 -->
+    </header>
+
+    <main>
+        <div class="skin-care-container">
+            <h1 class="section-title">个性化皮肤护理</h1>
+            <p class="section-description">根据您的皮肤类型和问题，获取专属护理方案</p>
+
+            <div class="skin-type-selector">
+                <div class="skin-type-card" onclick="showCareRoutine('dry')">
+                    <img src="images/dry-skin.jpg" alt="干性皮肤" onerror="this.src='images/default-skin.jpg'">
+                    <h4>干性皮肤</h4>
+                    <p>皮肤紧绷、缺水、易脱皮</p>
+                </div>
+                <div class="skin-type-card" onclick="showCareRoutine('oily')">
+                    <img src="images/oily-skin.jpg" alt="油性皮肤" onerror="this.src='images/default-skin.jpg'">
+                    <h4>油性皮肤</h4>
+                    <p>出油多、毛孔粗大、易长痘</p>
+                </div>
+                <div class="skin-type-card" onclick="showCareRoutine('combination')">
+                    <img src="images/combination-skin.jpg" alt="混合性皮肤" onerror="this.src='images/default-skin.jpg'">
+                    <h4>混合性皮肤</h4>
+                    <p>T区油腻、两颊干燥</p>
+                </div>
+                <div class="skin-type-card" onclick="showCareRoutine('sensitive')">
+                    <img src="images/sensitive-skin.jpg" alt="敏感性皮肤" onerror="this.src='images/default-skin.jpg'">
+                    <h4>敏感性皮肤</h4>
+                    <p>易发红、刺痛、过敏</p>
+                </div>
+                <div class="skin-type-card" onclick="showCareRoutine('aging')">
+                    <img src="images/aging-skin.jpg" alt="成熟肌肤" onerror="this.src='images/default-skin.jpg'">
+                    <h4>成熟肌肤</h4>
+                    <p>细纹、松弛、色斑</p>
+                </div>
+            </div>
+
+            <!-- 干性皮肤护理方案 -->
+            <div id="dry-care" class="care-routine">
+                <div class="routine-header">
+                    <h3>干性皮肤护理方案</h3>
+                    <p>干性皮肤需要重点补水保湿，增强皮肤屏障，减少水分流失。以下是适合干性皮肤的日常护理步骤。</p>
+                </div>
+
+                <div class="routine-steps">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h4>温和清洁</h4>
+                        <p>使用不含皂基的温和洁面产品，避免过度清洁导致皮肤更加干燥。水温控制在30-35℃，早晚各一次。</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h4>爽肤水/化妆水</h4>
+                        <p>选择不含酒精的保湿型爽肤水，轻拍至吸收，为后续护肤做准备。</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h4>精华液</h4>
+                        <p>使用含有透明质酸、神经酰胺等成分的精华液，帮助深层补水锁水。</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <h4>面霜/乳液</h4>
+                        <p>选择质地丰富的面霜，形成保护膜锁住水分。晚上可使用更滋润的晚霜。</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">5</div>
+                        <h4>防晒</h4>
+                        <p>白天外出前使用SPF30以上的防晒霜，防止紫外线加速皮肤老化和水分流失。</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">6</div>
+                        <h4>定期敷面膜</h4>
+                        <p>每周2-3次补水面膜，增强皮肤含水量，改善干燥状态。</p>
+                    </div>
+                </div>
+
+                <div class="product-recommendations">
+                    <h3>推荐产品</h3>
+                    <div class="products-grid">
+                        <div class="product-card">
+                            <img src="images/cleanser.jpg" alt="温和洁面乳" onerror="this.src='images/default-product.jpg'">
+                            <h5>温和洁面乳</h5>
+                            <p>不含皂基，温和清洁不紧绷</p>
+                            <div class="price">¥128</div>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/toner.jpg" alt="保湿化妆水" onerror="this.src='images/default-product.jpg'">
+                            <h5>保湿化妆水</h5>
+                            <p>无酒精配方，舒缓补水</p>
+                            <div class="price">¥158</div>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/serum.jpg" alt="玻尿酸精华液" onerror="this.src='images/default-product.jpg'">
+                            <h5>玻尿酸精华液</h5>
+                            <p>深层补水，提升肌肤含水量</p>
+                            <div class="price">¥198</div>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/cream.jpg" alt="滋润面霜" onerror="this.src='images/default-product.jpg'">
+                            <h5>滋润面霜</h5>
+                            <p>锁水保湿，修复皮肤屏障</p>
+                            <div class="price">¥168</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tips-section">
+                    <h3>干性皮肤护理小贴士</h3>
+                    <div class="tips-grid">
+                        <div class="tip-card">
+                            <h4>饮食建议</h4>
+                            <p>多摄入富含Omega-3脂肪酸的食物，如深海鱼、坚果等，有助于改善皮肤干燥。保持充足水分摄入，每天至少8杯水。</p>
+                        </div>
+                        <div class="tip-card">
+                            <h4>环境调节</h4>
+                            <p>冬季使用加湿器增加室内湿度，避免长时间处于空调环境。洗澡水温不宜过高，洗澡后立即涂抹身体乳。</p>
+                        </div>
+                        <div class="tip-card">
+                            <h4>避免刺
+                            <p>避免使用含有酒精、香料等刺激性成分的产品，选择标有"适合敏感肌肤"的产品。减少去角质频率，每周不超过1次。</p>
+                        </div>
+                    </div>
+                </div>
+            
+            <!-- 油性皮肤护理方案 -->
+            <div id="oily-care" class="care-routine">
+                <div class="routine-header">
+                    <h3>油性皮肤护理方案</h3>
+                    <p>油性皮肤需要控油但不能过度清洁，平衡水油是关键。以下是适合油性皮肤的日常护理步骤。</p>
+                </div>
+
+                <div class="routine-steps">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h4>深层清洁</h4>
+                        <p>选择含有水杨酸或茶树精油的洁面产品，早晚各一次，彻底清除多余油脂和污垢。</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h4>控油爽肤水</h4>
+                        <p>使用含有水杨酸或果酸的爽肤水，帮助控油并温和去除老化角质。</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h4>精华液</h4>
+                        <p>选择轻薄质地的精华液，含有烟酰胺或锌等成分，帮助控制油脂分泌。</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <h4>轻薄保湿</h4>
+                        <p>使用凝胶状或水乳质地的保湿产品，避免使用过于油腻的面霜。</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">5</div>
+                        <h4>防晒</h4>
+                        <p>选择无油配方或哑光效果的防晒产品，SPF30以上，避免油光满面。</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">6</div>
+                        <h4>定期深层清洁</h4>
+                        <p>每周1-2次使用泥膜或黏土面膜，深层清洁毛孔，吸附多余油脂。</p>
+                    </div>
+                </div>
+
+                <div class="product-recommendations">
+                    <h3>推荐产品</h3>
+                    <div class="products-grid">
+                        <div class="product-card">
+                            <img src="images/oily-cleanser.jpg" alt="控油洁面凝胶" onerror="this.src='images/default-product.jpg'">
+                            <h5>控油洁面凝胶</h5>
+                            <p>含水杨酸成分，深层清洁毛孔</p>
+                            <div class="price">¥138</div>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/oily-toner.jpg" alt="控油爽肤水" onerror="this.src='images/default-product.jpg'">
+                            <h5>控油爽肤水</h5>
+                            <p>调节水油平衡，收敛毛孔</p>
+                            <div class="price">¥148</div>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/oily-serum.jpg" alt="平衡精华液" onerror="this.src='images/default-product.jpg'">
+                            <h5>平衡精华液</h5>
+                            <p>控制油脂分泌，改善肤质</p>
+                            <div class="price">¥188</div>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/oily-moisturizer.jpg" alt="清爽凝露" onerror="this.src='images/default-product.jpg'">
+                            <h5>清爽凝露</h5>
+                            <p>轻薄保湿，不油腻</p>
+                            <div class="price">¥158</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tips-section">
+                    <h3>油性皮肤护理小贴士</h3>
+                    <div class="tips-grid">
+                        <div class="tip-card">
+                            <h4>饮食调整</h4>
+                            <p>减少高糖、高脂肪、辛辣食物的摄入，多吃新鲜蔬果和富含锌的食物，如牡蛎、南瓜籽等。</p>
+                        </div>
+                        <div class="tip-card">
+                            <h4>生活习惯</h4>
+                            <p>保持规律作息，避免熬夜，减少压力，这些都会影响皮脂分泌。勤换枕套和毛巾，避免细菌滋生。</p>
+                        </div>
+                        <div class="tip-card">
+                            <h4>护理技巧</h4>
+                            <p>使用吸油纸而非反复洗脸来控制日间油光。不要过度去角质，以免刺激皮肤产生更多油脂。</p>
+                        </div>
+                    </div>
+                </div>
+            
+            <!-- 敏感性皮肤护理方案 -->
+            <div id="sensitive-care" class="care-routine">
+                <div class="routine-header">
+                    <h3>敏感性皮肤护理方案</h3>
+                    <p>敏感性皮肤需要特别温和的护理，避免刺激，修复皮肤屏障是关键。</p>
+                </div>
+
+                <div class="routine-steps">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h4>极致温和清洁</h4>
+                        <p>选择无皂、无香料、低刺激的洁面产品，用温水轻柔清洁，避免摩擦。</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h4>舒缓化妆水</h4>
+                        <p>使用不含酒精、无刺激的舒缓型化妆水，可选择含有芦荟、洋甘菊等成分。</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h4>修复精华</h4>
+                        <p>使用含有神经酰胺、泛醇等修复成分的精华液，帮助强化皮肤屏障。</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <h4>舒缓保湿</h4>
+                        <p>选择简单配方、低致敏的面霜，避免含有过多活性成分。</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">5</div>
+                        <h4>物理防晒</h4>
+                        <p>选择物理防晒霜（含氧化锌、二氧化钛），避免化学防晒成分引起刺激。</p>
+                    </div>
+                </div>
+
+                <div class="product-recommendations">
+                    <h3>推荐产品</h3>
+                    <div class="products-grid">
+                        <div class="product-card">
+                            <img src="images/sensitive-cleanser.jpg" alt="舒敏洁面乳" onerror="this.src='images/default-product.jpg'">
+                            <h5>舒敏洁面乳</h5>
+                            <p>无皂配方，温和不刺激</p>
+                            <div class="price">¥148</div>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/sensitive-toner.jpg" alt="舒缓化妆水" onerror="this.src='images/default-product.jpg'">
+                            <h5>舒缓化妆水</h5>
+                            <p>无酒精，舒缓敏感肌肤</p>
+                            <div class="price">¥168</div>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/sensitive-serum.jpg" alt="修复精华液" onerror="this.src='images/default-product.jpg'">
+                            <h5>修复精华液</h5>
+                            <p>强化皮肤屏障，减少敏感</p>
+                            <div class="price">¥208</div>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/sensitive-cream.jpg" alt="舒敏面霜" onerror="this.src='images/default-product.jpg'">
+                            <h5>舒敏面霜</h5>
+                            <p>简单配方，舒缓保湿</p>
+                            <div class="price">¥178</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tips-section">
+                    <h3>敏感肌肤护理小贴士</h3>
+                    <div class="tips-grid">
+                        <div class="tip-card">
+                            <h4>新品测试</h4>
+                            <p>使用新产品前先在手腕内侧测试24小时，确认无不良反应再使用。每次只更换一种产品，方便追踪过敏源。</p>
+                        </div>
+                        <div class="tip-card">
+                            <h4>环境保护</h4>
+                            <p>避免极端温度变化，减少阳光直射，出门戴帽子、口罩等物理防护。室内保持适宜湿度。</p>
+                        </div>
+                        <div class="tip-card">
+                            <h4>成分避免</h4>
+                            <p>避免使用含有酒精、香料、色素、防腐剂等刺激性成分的产品。选择标有"低敏"或"敏感肌适用"的产品。</p>
+                        </div>
+                    </div>
+                </div>
+            
+            <!-- 在敏感性皮肤护理方案后添加 -->
+            
+            <!-- 混合性皮肤护理方案 -->
+            <div id="combination-care" class="care-routine">
+                <div class="routine-header">
+                    <h3>混合性皮肤护理方案</h3>
+                    <p>混合性皮肤需要针对不同部位采取不同的护理策略，平衡各区域的水油分泌。</p>
+                </div>
+
+                <div class="routine-steps">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h4>分区清洁</h4>
+                        <p>T区使用控油型洁面产品，两颊使用温和型洁面产品，或选择适中性质的洁面产品统一使用。</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h4>平衡化妆水</h4>
+                        <p>选择不含酒精的平衡型爽肤水，既能控油又能保湿。</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h4>精华使用</h4>
+                        <p>T区使用控油精华，两颊使用保湿精华，注意分区使用。</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <h4>差异化保湿</h4>
+                        <p>T区使用清爽凝胶，两颊使用滋润乳液，实现精准护理。</p>
+                    </div>
+                </div>
+
+                <div class="product-recommendations">
+                    <h3>推荐产品</h3>
+                    <div class="products-grid">
+                        <div class="product-card">
+                            <img src="images/combination-cleanser.jpg" alt="平衡洁面乳" onerror="this.src='images/default-product.jpg'">
+                            <h5>平衡洁面乳</h5>
+                            <p>温和清洁，平衡水油</p>
+                            <div class="price">¥158</div>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/combination-toner.jpg" alt="平衡化妆水" onerror="this.src='images/default-product.jpg'">
+                            <h5>平衡化妆水</h5>
+                            <p>调节水油平衡</p>
+                            <div class="price">¥168</div>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/combination-serum.jpg" alt="双效精华液" onerror="this.src='images/default-product.jpg'">
+                            <h5>双效精华液</h5>
+                            <p>控油保湿双重功效</p>
+                            <div class="price">¥198</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tips-section">
+                    <h3>混合性肌肤护理小贴士</h3>
+                    <div class="tips-grid">
+                        <div class="tip-card">
+                            <h4>分区护理</h4>
+                            <p>根据不同部位的肤质特点选择适合的产品，T区重点控油，两颊重点保湿。</p>
+                        </div>
+                        <div class="tip-card">
+                            <h4>平衡调理</h4>
+                            <p>注意饮食均衡，保持良好作息，这些都会影响皮肤的水油平衡。</p>
+                        </div>
+                    </div>
+                </div>
+            
+            <!-- 成熟肌肤护理方案 -->
+            <div id="aging-care" class="care-routine">
+                <div class="routine-header">
+                    <h3>成熟肌肤护理方案</h3>
+                    <p>成熟肌肤需要重点抗衰老，提升紧致度，淡化细纹，改善暗沉。</p>
+                </div>
+
+                <div class="routine-steps">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h4>温和洁面</h4>
+                        <p>使用氨基酸类温和洁面产品，避免过度清洁导致皮肤干燥。</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h4>抗老化妆水</h4>
+                        <p>选择含有氧化acee成分的化妆水，为后续护理做准备。</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h4>精华护理</h4>
+                        <p>使用含视黄醇、肽类等抗衰老成分的精华，改善细纹和松弛。</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <h4>密集滋养</h4>
+                        <p>使用营养丰富的面霜，加强保湿滋养，提升肌肤弹性。</p>
+                    </div>
+                </div>
+
+                <div class="product-recommendations">
+                    <h3>推荐产品</h3>
+                    <div class="products-grid">
+                        <div class="product-card">
+                            <img src="images/aging-cleanser.jpg" alt="滋养洁面乳" onerror="this.src='images/default-product.jpg'">
+                            <h5>滋养洁面乳</h5>
+                            <p>温和清洁，补充营养</p>
+                            <div class="price">¥168</div>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/aging-serum.jpg" alt="抗衰老精华" onerror="this.src='images/default-product.jpg'">
+                            <h5>抗衰老精华</h5>
+                            <p>改善细纹，提升紧致</p>
+                            <div class="price">¥288</div>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/aging-cream.jpg" alt="紧致面霜" onerror="this.src='images/default-product.jpg'">
+                            <h5>紧致面霜</h5>
+                            <p>密集滋养，提升弹性</p>
+                            <div class="price">¥238</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tips-section">
+                    <h3>成熟肌肤护理小贴士</h3>
+                    <div class="tips-grid">
+                        <div class="tip-card">
+                            <h4>抗衰养护</h4>
+                            <p>坚持使用防晒，保持充足睡眠，适量运动，这些都能帮助延缓衰老。</p>
+                        </div>
+                        <div class="tip-card">
+                            <h4>按摩护理</h4>
+                            <p>每天进行面部按摩，促进血液循环，帮助产品吸收，提升面部轮廓。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <!-- 复用主页的页脚 -->
+    </footer>
+
+    <section class="skin-care-section">
+        <div class="container">
+            <div class="skin-care-card">
+                <h3 class="skin-care-title">内调方案</h3>
+                <ul class="care-method-list">
+                    <li>滋阴清热：菊花、枸杞、百合</li>
+                    <li>调理肠胃：山药、莲子、薏仁</li>
+                    <li>避免辛辣、酒精、刺激性食物</li>
+                </ul>
+            </div>
+    
+            <div class="skin-care-card">
+                <h3 class="skin-care-title">外养方案</h3>
+                <ul class="care-method-list">
+                    <li>选择无香料、无酒精的温和产品</li>
+                    <li>使用含有积雪草、芦荟、燕麦的舒缓成分</li>
+                    <li>避免过热水洗脸，保持肌肤水润</li>
+                    <li>减少使用产品种类，简化护肤步骤</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+
+    // 添加樱花动画
+    class SakuraAnimation {
+        constructor() {
+            this.container = document.getElementById('sakura-container');
+            this.maxPetals = 30;
+            this.petals = [];
+            this.initialize();
+        }
+
+        initialize() {
+            for (let i = 0; i < this.maxPetals; i++) {
+                this.createPetal();
+            }
+            this.animate();
+        }
+
+        createPetal() {
+            const petal = document.createElement('div');
+            petal.className = 'sakura';
+            const size = Math.random() * 10 + 5;
+            petal.style.width = `${size}px`;
+            petal.style.height = `${size}px`;
+            petal.style.left = `${Math.random() * window.innerWidth}px`;
+            petal.style.top = `-${size}px`;
+            petal.style.animationDuration = `${Math.random() * 3 + 2}s`;
+            this.container.appendChild(petal);
+            return petal;
+        }
+
+        animate() {
+            const petals = this.container.children;
+            for (let petal of petals) {
+                const rect = petal.getBoundingClientRect();
+                if (rect.top > window.innerHeight) {
+                    petal.remove();
+                    this.createPetal();
+                }
+            }
+            requestAnimationFrame(() => this.animate());
+        }
+    }
+
+    // 页面加载完成后启动动画
+    window.addEventListener('load', () => {
+        new SakuraAnimation();
+    });
+
+    // 添加樱花飘落动画
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes fall {
+            0% {
+                transform: translateY(-10px) rotate(0deg);
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+    `;
+    document.head.appendChild(style);
+</body>
+</html>

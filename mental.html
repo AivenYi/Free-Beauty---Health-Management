@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>心理支持 - 自在美丽</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="chinese-style">
+    <!-- 页面头部 -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>自在美丽</h1>
+                <p class="slogan">美丽源于自信，健康成就美丽</p>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="profile.html">个人档案</a></li>
+                    <li><a href="diet.html">健康饮食</a></li>
+                    <li><a href="exercise.html">健康锻炼</a></li>
+                    <li><a href="mental.html" class="active">心理支持</a></li>
+                    <li><a href="community.html">社区互动</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 心理支持横幅 -->
+        <section class="mental-banner">
+            <div class="container">
+                <h1>心灵的港湾</h1>
+                <p>我们一起探索内心的宁静，找回生活的平衡</p>
+            </div>
+        </section>
+
+        <!-- 每日心灵语录 -->
+        <section class="daily-quote">
+            <div class="container">
+                <div class="quote-card">
+                    <h2>今日心语</h2>
+                    <blockquote>
+                        "静心如水，方能映照万物；平和如山，自能安然处世。"
+                    </blockquote>
+                    <p class="quote-author">— 古德明 心理学家</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 心理服务 -->
+        <section class="mental-services">
+            <div class="container">
+                <h2 class="section-title">专业服务</h2>
+                <div class="service-grid">
+                    <div class="service-card">
+                        <img src="images\屏幕截图 2025-03-23 093205.png" alt="心理咨询" onerror="this.src='https://via.placeholder.com/400x300/F0E68C/000000?text=心理咨询'">
+                        <div class="service-content">
+                            <h3>一对一心理咨询</h3>
+                            <p>专业心理咨询师为您提供个性化的心理支持和成长建议</p>
+                            <button class="btn btn-primary" onclick="bookService('counseling')">预约咨询</button>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <img src="images\屏幕截图 2025-03-23 093252.png" alt="团体治疗" onerror="this.src='https://via.placeholder.com/400x300/DDA0DD/000000?text=团体治疗'">
+                        <div class="service-content">
+                            <h3>团体心理活动</h3>
+                            <p>参与团体活动，分享经验，互相支持，共同成长</p>
+                            <button class="btn btn-primary" onclick="bookService('group')">加入团体</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 心理测评 -->
+        <section class="mental-assessment">
+            <div class="container">
+                <h2 class="section-title">心理测评</h2>
+                <div class="assessment-grid">
+                    <div class="assessment-card">
+                        <h3>压力指数测试</h3>
+                        <p>了解您当前的压力水平，获取个性化减压建议</p>
+                        <button class="btn btn-secondary" onclick="startAssessment('stress')">开始测试</button>
+                    </div>
+
+                    <div class="assessment-card">
+                        <h3>情绪健康评估</h3>
+                        <p>评估您的情绪状态，获取情绪管理方案</p>
+                        <button class="btn btn-secondary" onclick="startAssessment('emotion')">开始测试</button>
+                    </div>
+
+                    <div class="assessment-card">
+                        <h3>睡眠质量评估</h3>
+                        <p>分析您的睡眠情况，改善睡眠质量</p>
+                        <button class="btn btn-secondary" onclick="startAssessment('sleep')">开始测试</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 冥想放松 -->
+        <section class="meditation">
+            <div class="container">
+                <h2 class="section-title">冥想放松</h2>
+                <div class="meditation-grid">
+                    <div class="meditation-card">
+                        <img src="images\屏幕截图 2025-03-23 093353.png" alt="呼吸冥想" onerror="this.src='https://via.placeholder.com/400x300/E0FFFF/000000?text=呼吸冥想'">
+                        <h3>呼吸冥想</h3>
+                        <p>10分钟</p>
+                        <button class="btn btn-primary" onclick="startMeditation('breathing')">开始练习</button>
+                    </div>
+
+                    <div class="meditation-card">
+                        <img src="images\屏幕截图 2025-03-23 093435.png" alt="正念冥想" onerror="this.src='https://via.placeholder.com/400x300/FFE4B5/000000?text=正念冥想'">
+                        <h3>正念冥想</h3>
+                        <p>15分钟</p>
+                        <button class="btn btn-primary" onclick="startMeditation('mindfulness')">开始练习</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 心理知识库 -->
+        <section class="mental-knowledge">
+            <div class="container">
+                <h2 class="section-title">心理知识库</h2>
+                <div class="knowledge-grid">
+                    <article class="knowledge-card">
+                        <h3>情绪管理技巧</h3>
+                        <ul>
+                            <li>识别情绪触发点</li>
+                            <li>学会情绪疏导</li>
+                            <li>建立积极思维</li>
+                        </ul>
+                    </article>
+
+                    <article class="knowledge-card">
+                        <h3>压力应对方法</h3>
+                        <ul>
+                            <li>时间管理策略</li>
+                            <li>放松技巧练习</li>
+                            <li>寻求社会支持</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚部分保持不变 -->
+</body>
+</html>

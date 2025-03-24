@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 - 自在美丽</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>自在美丽</h1>
+                <p class="slogan">美丽源于自信，健康成就美丽</p>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="profile.html">个人档案</a></li>
+                    <li><a href="diet.html">健康饮食</a></li>
+                    <li><a href="exercise.html">健康锻炼</a></li>
+                    <li><a href="mental.html">心理支持</a></li>
+                    <li><a href="contact.html" class="active">联系我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-banner">
+            <div class="container">
+                <h2>联系我们</h2>
+                <p>我们期待听到您的声音，为您提供更好的服务</p>
+            </div>
+        </section>
+
+        <section class="contact-content">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- 联系信息 -->
+                    <div class="contact-info">
+                        <h3>联系方式</h3>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>地址</h4>
+                                <p>北京市朝阳区健康路88号美丽大厦</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>电话</h4>
+                                <p>400-888-9999</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>邮箱</h4>
+                                <p>contact@zizaimeili.com</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>工作时间</h4>
+                                <p>周一至周五: 9:00 - 18:00</p>
+                                <p>周六至周日: 10:00 - 16:00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 联系表单 -->
+                    <div class="contact-form">
+                        <h3>发送消息</h3>
+                        <form id="messageForm" onsubmit="return submitMessage(event)">
+                            <div class="form-group">
+                                <label for="name">姓名</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">邮箱</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">电话</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">主题</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">请选择咨询主题</option>
+                                    <option value="service">服务咨询</option>
+                                    <option value="suggestion">建议反馈</option>
+                                    <option value="cooperation">商务合作</option>
+                                    <option value="other">其他</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">消息内容</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">发送消息</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- 地图区域 -->
+                <div class="map-container">
+                    <h3>我们的位置</h3>
+                    <div class="map" id="map">
+                        <!-- 这里可以嵌入地图，如百度地图或高德地图 -->
+                        <img src="images/map-placeholder.jpg" alt="位置地图" class="placeholder-map">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>自在美丽</h2>
+                    <p>美丽源于自信，健康成就美丽</p>
+                </div>
+                <div class="footer-links">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="about.html">关于我们</a></li>
+                        <li><a href="contact.html">联系我们</a></li>
+                        <li><a href="privacy.html">隐私政策</a></li>
+                        <li><a href="terms.html">使用条款</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>订阅每周健康资讯</h3>
+                    <form class="newsletter-form" onsubmit="return subscribeNewsletter(event)">
+                        <input type="email" placeholder="您的邮箱地址" required>
+                        <button type="submit" class="btn btn-primary">订阅</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 自在美丽. 保留所有权利.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="微信"><i class="fab fa-weixin"></i></a>
+                    <a href="#" aria-label="微博"><i class="fab fa-weibo"></i></a>
+                    <a href="#" aria-label="抖音"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/your-code.js"></script>
+    <script>
+        function submitMessage(event) {
+            event.preventDefault();
+            // 这里添加表单提交逻辑
+            alert('消息已发送，我们会尽快回复您！');
+            event.target.reset();
+            return false;
+        }
+
+        function subscribeNewsletter(event) {
+            event.preventDefault();
+            const email = event.target.querySelector('input[type="email"]').value;
+            alert(`感谢订阅！我们将定期发送健康资讯到 ${email}`);
+            event.target.reset();
+            return false;
+        }
+    </script>
+</body>
+</html>

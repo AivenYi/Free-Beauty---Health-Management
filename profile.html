@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人档案 - 自在美丽</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="chinese-style">
+    <!-- 页面头部 -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>自在美丽</h1>
+                <p class="slogan">美丽源于自信，健康成就美丽</p>
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="打开菜单">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="profile.html" class="active">个人档案</a></li>
+                    <li><a href="diet.html">健康饮食</a></li>
+                    <li><a href="exercise.html">健康锻炼</a></li>
+                    <li><a href="mental.html">心理支持</a></li>
+                    <li><a href="community.html">社区互动</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 个人信息概览 -->
+        <section class="profile-overview">
+            <div class="container">
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        <img src="images/avatar.jpg" alt="个人头像" id="avatar-preview" onerror="this.src='https://via.placeholder.com/150x150/F0F8FF/000000?text=头像'">
+                        <input type="file" id="avatar-upload" accept="image/*" style="display: none;">
+                        <button class="btn btn-secondary" onclick="document.getElementById('avatar-upload').click()">更换头像</button>
+                    </div>
+                    <div class="profile-info">
+                        <h2>个人信息</h2>
+                        <div class="editable-field">
+                            <span id="username">张小美</span>
+                            <button class="edit-btn" onclick="editField('username')">编辑</button>
+                        </div>
+                        <p class="profile-bio">年龄：28岁 | 职业：设计师</p>
+                        <div class="profile-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">30</span>
+                                <span>连续打卡</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">12</span>
+                                <span>达成目标</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">89%</span>
+                                <span>完成度</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 身体数据记录 -->
+        <section class="data-tracking">
+            <div class="container">
+                <h2 class="section-title">身体数据记录</h2>
+                <div class="data-record-card">
+                    <form id="health-data-form" onsubmit="return saveHealthData(event)">
+                        <div class="data-group">
+                            <h4>基础数据</h4>
+                            <div class="data-input-grid">
+                                <div class="data-input-item">
+                                    <label for="weight">体重 (kg)</label>
+                                    <input type="number" id="weight" step="0.1" required>
+                                </div>
+                                <div class="data-input-item">
+                                    <label for="height">身高 (cm)</label>
+                                    <input type="number" id="height" required>
+                                </div>
+                                <div class="data-input-item">
+                                    <label for="body-fat">体脂率 (%)</label>
+                                    <input type="number" id="body-fat" step="0.1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="data-group">
+                            <h4>围度数据</h4>
+                            <div class="data-input-grid">
+                                <div class="data-input-item">
+                                    <label for="chest">胸围 (cm)</label>
+                                    <input type="number" id="chest">
+                                </div>
+                                <div class="data-input-item">
+                                    <label for="waist">腰围 (cm)</label>
+                                    <input type="number" id="waist">
+                                </div>
+                                <div class="data-input-item">
+                                    <label for="hip">臀围 (cm)</label>
+                                    <input type="number" id="hip">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="data-group">
+                            <h4>健康指标</h4>
+                            <div class="data-input-grid">
+                                <div class="data-input-item">
+                                    <label for="blood-pressure">血压 (mmHg)</label>
+                                    <input type="text" id="blood-pressure" placeholder="120/80">
+                                </div>
+                                <div class="data-input-item">
+                                    <label for="heart-rate">心率 (次/分)</label>
+                                    <input type="number" id="heart-rate">
+                                </div>
+                                <div class="data-input-item">
+                                    <label for="sleep">睡眠时长 (小时)</label>
+                                    <input type="number" id="sleep" step="0.5">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="data-actions">
+                            <button type="submit" class="btn btn-primary">保存数据</button>
+                            <button type="button" class="btn btn-secondary" onclick="resetForm()">重置</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- 数据历史记录 -->
+                <div class="data-history">
+                    <h3>数据趋势</h3>
+                    <div class="data-chart">
+                        <canvas id="weightChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 健康目标 -->
+        <section class="health-goals">
+            <div class="container">
+                <h2 class="section-title">健康目标</h2>
+                <div class="goals-grid">
+                    <div class="goal-card">
+                        <h3>体重目标</h3>
+                        <div class="goal-progress">
+                            <div class="progress-bar" style="width: 75%;">75%</div>
+                        </div>
+                        <p>目标：减重3公斤</p>
+                        <p>当前进度：已减重2.25公斤</p>
+                    </div>
+
+                    <div class="goal-card">
+                        <h3>运动目标</h3>
+                        <div class="goal-progress">
+                            <div class="progress-bar" style="width: 60%;">60%</div>
+                        </div>
+                        <p>目标：每周运动4次</p>
+                        <p>本周已完成：3次</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚部分保持不变 -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // 头像上传预览
+        document.getElementById('avatar-upload').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('avatar-preview').src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // 编辑字段
+        function editField(fieldId) {
+            const element = document.getElementById(fieldId);
+            const currentValue = element.textContent;
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.value = currentValue;
+            input.onblur = function() {
+                element.textContent = this.value;
+            }
+            element.textContent = '';
+            element.appendChild(input);
+            input.focus();
+        }
+
+        // 保存健康数据
+        function saveHealthData(event) {
+            event.preventDefault();
+            // 这里添加数据保存逻辑
+            alert('数据保存成功！');
+            return false;
+        }
+
+        // 重置表单
+        function resetForm() {
+            document.getElementById('health-data-form').reset();
+        }
+
+        // 绘制体重趋势图表
+        const ctx = document.getElementById('weightChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['1月', '2月', '3月', '4月', '5月', '6月'],
+                datasets: [{
+                    label: '体重变化',
+                    data: [65, 64.5, 63.8, 63.2, 62.5, 62],
+                    borderColor: '#8C2318',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: '近6个月体重变化趋势'
+                    }
+                }
+            }     <p>怕冷，手脚发凉，面色偏白，喜热饮食，大便偏稀。</p>
+                            </div>
+                            <div class="type-card">
+                                <h4>阴虚质</h4>
+                                <p>手足心热，口干咽燥，面部潮红，大便干结，舌红少津。</p>
+                            </div>
+                            <div class="type-card">
+                                <h4>痰湿质</h4>
+                                <p>体形肥胖，腹部松软，面部油腻，口中黏腻，舌苔厚腻。</p>
+                            </div>
+                            <div class="type-card">
+                                <h4>湿热质</h4>
+                                <p>面垢油光，易生痤疮，口苦口臭，小便短黄，大便粘滞。</p>
+                            </div>
+                        </div>
+                        <a href="constitution-types.html" class="read-more">查看全部体质类型 →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        });
+    </script>
+</body>
+</html>

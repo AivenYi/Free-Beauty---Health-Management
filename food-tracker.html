@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>饮食统计 - 自在美丽</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .tracker-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab-buttons {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+
+        .tab-btn {
+            padding: 12px 24px;
+            border: none;
+            background: none;
+            font-size: 16px;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .tab-btn.active {
+            color: #e67e22;
+            font-weight: bold;
+        }
+
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #e67e22;
+            border-radius: 3px;
+        }
+
+        .stats-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e67e22;
+            margin: 10px 0;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #f0f0f0;
+            border-radius: 4px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #e67e22;
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+
+        .chart-container {
+            margin-top: 30px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .recommendations {
+            margin-top: 40px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .recommendations h3 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 20px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+
+        .recommendation-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+        }
+
+        .recommendation-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .recommendation-card h4 {
+            color: #e67e22;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .recommendation-card ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .recommendation-card li {
+            margin: 10px 0;
+            padding-left: 20px;
+            position: relative;
+            color: #666;
+        }
+
+        .recommendation-card li::before {
+            content: '•';
+            color: #e67e22;
+            position: absolute;
+            left: 0;
+            font-size: 20px;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <!-- 复用主页的导航栏 -->
+    </header>
+
+    <main>
+        <div class="tracker-container">
+            <h1 class="section-title">饮食统计</h1>
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="switchStats('weekly')">周统计</button>
+                <button class="tab-btn" onclick="switchStats('monthly')">月统计</button>
+            </div>
+
+            <!-- 周统计内容 -->
+            <div id="weekly-stats" class="stats-content active">
+                <div class="stats-summary">
+                    <div class="stat-card">
+                        <div class="stat-value">1750</div>
+                        <div class="stat-label">平均每日卡路里摄入</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">5/7</div>
+                        <div class="stat-label">蛋白质摄入达标天数</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 71%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">6/7</div>
+                        <div class="stat-label">蔬果摄入达标天数</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">4/7</div>
+                        <div class="stat-label">水分摄入达标天数</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 57%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 月统计内容 -->
+            <div id="monthly-stats" class="stats-content">
+                <div class="stats-summary">
+                    <div class="stat-card">
+                        <div class="stat-value">1820</div>
+                        <div class="stat-label">平均每日卡路里摄入</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 78%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">22/30</div>
+                        <div class="stat-label">蛋白质摄入达标天数</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 73%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">25/30</div>
+                        <div class="stat-label">蔬果摄入达标天数</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 83%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">20/30</div>
+                        <div class="stat-label">水分摄入达标天数</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 67%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 添加饮食建议部分 -->
+            <div class="recommendations">
+                <h3>个性化饮食建议</h3>
+                <div class="recommendation-card">
+                    <h4>本周饮食分析</h4>
+                    <p>根据您的饮食记录，建议：</p>
+                    <ul>
+                        <li>增加蛋白质摄入，可多食用瘦肉、鱼类、豆制品</li>
+                        <li>水分摄入不足，建议每天饮水2000ml以上</li>
+                        <li>蔬果摄入良好，继续保持</li>
+                    </ul>
+                </div>
+
+                <div class="recommendation-card">
+                    <h4>营养均衡建议</h4>
+                    <ul>
+                        <li>主食：全谷物为主，控制精制米面</li>
+                        <li>蛋白质：每天摄入1-1.5g/kg体重</li>
+                        <li>蔬菜：每天不少于300g深色蔬菜</li>
+                        <li>水果：每天1-2份，建议餐前食用</li>
+                    </ul>
+                </div>
+
+                <div class="recommendation-card">
+                    <h4>饮食小贴士</h4>
+                    <ul>
+                        <li>建议少食多餐，每餐7分饱</li>
+                        <li>晚餐建议在19:00前完成</li>
+                        <li>注意食物多样性，保证营养均衡</li>
+                        <li>避免过度加工食品，选择新鲜食材</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <!-- 复用主页的页脚 -->
+    </footer>
+</body>
+</html>
+
+<!-- 添加样式 -->
+<style>
+    .stats-content {
+        display: none;
+        transition: all 0.3s ease;
+    }
+    
+    .stats-content.active {
+        display: block;
+    }
+
+    .tab-buttons {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 30px;
+        border-bottom: 2px solid #f0f0f0;
+        padding-bottom: 10px;
+    }
+
+    .tab-btn {
+        padding: 12px 24px;
+        border: none;
+        background: none;
+        font-size: 16px;
+        color: #666;
+        cursor: pointer;
+        transition: all 0.3s;
+        position: relative;
+    }
+
+    .tab-btn.active {
+        color: #e67e22;
+        font-weight: bold;
+    }
+
+    .tab-btn.active::after {
+        content: '';
+        position: absolute;
+        bottom: -12px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: #e67e22;
+        border-radius: 3px;
+    }
+
+    .stats-summary {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+
+    .stat-card {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        text-align: center;
+    }
+
+    .stat-value {
+        font-size: 24px;
+        font-weight: bold;
+        color: #e67e22;
+        margin: 10px 0;
+    }
+
+    .progress-bar {
+        width: 100%;
+        height: 8px;
+        background: #f0f0f0;
+        border-radius: 4px;
+        margin-top: 10px;
+        overflow: hidden;
+    }
+
+    .progress-fill {
+        height: 100%;
+        background: #e67e22;
+        border-radius: 4px;
+        transition: width 0.3s ease;
+    }
+</style>
+
+<!-- 添加JavaScript -->
+<script>
+    function switchStats(period) {
+        // 移除所有内容区域的active类
+        document.querySelectorAll('.stats-content').forEach(content => {
+            content.classList.remove('active');
+        });
+        
+        // 移除所有标签的active类
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        // 添加active类到选中的内容和标签
+        document.getElementById(`${period}-stats`).classList.add('active');
+        document.querySelector(`.tab-btn[onclick="switchStats('${period}')"]`).classList.add('active');
+    }
+</script>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>健康锻炼 - 自在美丽</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="chinese-style">
+    <!-- 页面头部 -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>自在美丽</h1>
+                <p class="slogan">美丽源于自信，健康成就美丽</p>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="profile.html">个人档案</a></li>
+                    <li><a href="diet.html">健康饮食</a></li>
+                    <li><a href="exercise.html" class="active">健康锻炼</a></li>
+                    <li><a href="mental.html">心理支持</a></li>
+                    <li><a href="community.html">社区互动</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 运动横幅 -->
+        <section class="exercise-banner">
+            <div class="container">
+                <h1>科学运动，健康生活</h1>
+                <p>定制专属运动计划，让运动成为生活的一部分</p>
+            </div>
+        </section>
+
+        <!-- 今日推荐运动 -->
+        <section class="daily-exercise">
+            <div class="container">
+                <h2 class="section-title">今日推荐运动</h2>
+                <div class="exercise-cards">
+                    <div class="exercise-card">
+                        <img src="images\屏幕截图 2025-03-23 091823.png" alt="瑜伽" onerror="this.src='https://via.placeholder.com/400x300/FFE4E1/000000?text=晨间瑜伽'">
+                        <div class="exercise-content">
+                            <h3>晨间瑜伽</h3>
+                            <p>唤醒身心，提升能量</p>
+                            <ul class="exercise-info">
+                                <li>适合人群：所有人群</li>
+                                <li>时长：20分钟</li>
+                                <li>消耗：100千卡</li>
+                            </ul>
+                            <button class="btn btn-primary" onclick="showExerciseDetail('yoga')">查看教程</button>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card">
+                        <img src="images\屏幕截图 2025-03-23 091915.png" alt="HIIT" onerror="this.src='https://via.placeholder.com/400x300/E6E6FA/000000?text=HIIT训练'">
+                        <div class="exercise-content">
+                            <h3>HIIT高强度间歇训练</h3>
+                            <p>高效燃脂，提升代谢</p>
+                            <ul class="exercise-info">
+                                <li>适合人群：中级健身者</li>
+                                <li>时长：30分钟</li>
+                                <li>消耗：300千卡</li>
+                            </ul>
+                            <button class="btn btn-primary" onclick="showExerciseDetail('hiit')">查看教程</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 运动分类 -->
+        <section class="exercise-categories">
+            <div class="container">
+                <h2 class="section-title">运动项目</h2>
+                <div class="category-grid">
+                    <div class="category-item">
+                        <img src="images\屏幕截图 2025-03-23 092109.png" alt="有氧运动" onerror="this.src='https://via.placeholder.com/300x200/98FB98/000000?text=有氧运动'">
+                        <h3>有氧运动</h3>
+                        <ul>
+                            <li>跑步</li>
+                            <li>游泳</li>
+                            <li>骑行</li>
+                            <li>跳绳</li>
+                        </ul>
+                    </div>
+
+                    <div class="category-item">
+                        <img src="images\屏幕截图 2025-03-23 092155.png" alt="力量训练" onerror="this.src='https://via.placeholder.com/300x200/DDA0DD/000000?text=力量训练'">
+                        <h3>力量训练</h3>
+                        <ul>
+                            <li>哑铃训练</li>
+                            <li>弹力带训练</li>
+                            <li>徒手训练</li>
+                            <li>器械训练</li>
+                        </ul>
+                    </div>
+
+                    <div class="category-item">
+                        <img src="images\屏幕截图 2025-03-23 093956.png" alt="柔韧性训练" onerror="this.src='https://via.placeholder.com/300x200/87CEEB/000000?text=柔韧性训练'">
+                        <h3>柔韧性训练</h3>
+                        <ul>
+                            <li>瑜伽</li>
+                            <li>普拉提</li>
+                            <li>拉伸</li>
+                            <li>太极</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 运动知识库 -->
+        <section class="exercise-knowledge">
+            <div class="container">
+                <h2 class="section-title">运动知识库</h2>
+                <div class="knowledge-grid">
+                    <div class="knowledge-card">
+                        <h3>运动前准备</h3>
+                        <ul>
+                            <li>充足热身，预防损伤</li>
+                            <li>适当补充水分</li>
+                            <li>穿着舒适运动装备</li>
+                            <li>确认身体状态</li>
+                        </ul>
+                    </div>
+
+                    <div class="knowledge-card">
+                        <h3>运动强度控制</h3>
+                        <ul>
+                            <li>心率监测</li>
+                            <li>自感用力度</li>
+                            <li>呼吸频率</li>
+                            <li>疲劳程度</li>
+                        </ul>
+                    </div>
+
+                    <div class="knowledge-card">
+                        <h3>运动后恢复</h3>
+                        <ul>
+                            <li>适当拉伸</li>
+                            <li>补充营养</li>
+                            <li>充分休息</li>
+                            <li>按摩放松</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 运动计划定制 -->
+        <section class="exercise-plan">
+            <div class="container">
+                <h2 class="section-title">定制运动计划</h2>
+                <div class="plan-content">
+                    <div class="plan-text">
+                        <h3>个性化运动方案</h3>
+                        <p>根据您的身体状况、运动目标和时间安排，为您量身定制专属运动计划。</p>
+                        <button class="btn btn-primary" onclick="startCustomPlan()">开始定制</button>
+                    </div>
+                    <div class="plan-image">
+                        <img src="images\屏幕截图 2025-03-23 093145.png" alt="定制计划" onerror="this.src='https://via.placeholder.com/500x300/FFF0F5/000000?text=定制专属计划'">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚部分保持不变 -->
+    <!-- 在运动健身页面合适位置添加计时器组件 -->
+    <div class="timer-container chinese-style">
+        <h3 class="timer-title">运动计时器</h3>
+        <div class="timer-display">
+            <span id="minutes">00</span>:<span id="seconds">00</span>
+        </div>
+        <div class="timer-label">准备开始</div>
+        <div class="timer-controls">
+            <button class="btn timer-btn" onclick="startTimer()">开始</button>
+            <button class="btn timer-btn" onclick="pauseTimer()">暂停</button>
+            <button class="btn timer-btn" onclick="resetTimer()">重置</button>
+        </div>
+        <div class="timer-presets">
+            <button class="btn preset-btn" onclick="setTimer(1)">1分钟</button>
+            <button class="btn preset-btn" onclick="setTimer(3)">3分钟</button>
+            <button class="btn preset-btn" onclick="setTimer(5)">5分钟</button>
+            <button class="btn preset-btn" onclick="setTimer(10)">10分钟</button>
+        </div>
+    </div>
+</body>
+</html>

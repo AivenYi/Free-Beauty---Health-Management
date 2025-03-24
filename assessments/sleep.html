@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>睡眠质量评估 - 自在美丽</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="chinese-style">
+    <!-- 页面头部 -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>自在美丽</h1>
+                <p class="slogan">美丽源于自信，健康成就美丽</p>
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="打开菜单">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="../profile.html">个人档案</a></li>
+                    <li><a href="../diet.html">健康饮食</a></li>
+                    <li><a href="../exercise.html">健康锻炼</a></li>
+                    <li><a href="../mental.html">心理支持</a></li>
+                    <li><a href="../community.html">社区互动</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主要内容区 -->
+    <main>
+        <section class="page-header assessment-header">
+            <div class="container">
+                <h1>睡眠质量评估</h1>
+                <p>分析您的睡眠情况，改善睡眠质量</p>
+            </div>
+        </section>
+
+        <section class="assessment-intro">
+            <div class="container">
+                <div class="intro-content">
+                    <div class="intro-text">
+                        <h2>关于睡眠质量评估</h2>
+                        <p>睡眠是人体恢复和修复的重要过程，良好的睡眠质量对身心健康至关重要。睡眠不足或质量差会影响情绪、认知功能、免疫系统和新陈代谢等多个方面。</p>
+                        <p>本测试基于睡眠医学研究，帮助您评估当前的睡眠质量，识别可能存在的睡眠问题，并提供针对性的改善建议。测试包含15个问题，完成大约需要3-5分钟。</p>
+                    </div>
+                    <div class="intro-image">
+                        <img src="https://via.placeholder.com/500x300/E0FFFF/000000?text=睡眠质量评估" alt="睡眠质量评估图">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="assessment-form">
+            <div class="container">
+                <h2 class="section-title">开始测试</h2>
+                <form id="sleep-test-form" class="test-form">
+                    <!-- 第一部分：睡眠习惯 -->
+                    <div class="form-section">
+                        <h3>睡眠习惯</h3>
+                        
+                        <div class="question-item">
+                            <p class="question">1. 您通常几点入睡？</p>
+                            <div class="options">
+                                <label><input type="radio" name="q1" value="1"> 22:00前</label>
+                                <label><input type="radio" name="q1" value="2"> 22:00-23:00</label>
+                                <label><input type="radio" name="q1" value="3"> 23:00-00:00</label>
+                                <label><input type="radio" name="q1" value="4"> 00:00-01:00</label>
+                                <label><input type="radio" name="q1" value="5"> 01:00后</label>
+                            </div>
+                        </div>
+                        
+                        <div class="question-item">
+                            <p class="question">2. 您通常几点起床？</p>
+                            <div class="options">
+                                <label><input type="radio" name="q2" value="1"> 5:00-6:00</label>
+                                <label><input type="radio" name="q2" value="2"> 6:00-7:00</label>
+                                <label><input type="radio" name="q2" value="3"> 7:00-8:00</label>
+                                <label><input type="radio" name="q2" value="4"> 8:00-9:00</label>
+                                <label><input type="radio" name="q2" value="5"> 9:00后</label>
+                            </div>
+                        </div>
+                        
+                        <div class="question-item">
+                            <p class="question">3. 您每晚平均睡眠时间是多少？</p>
+                            <div class="options">
+                                <label><input type="radio" name="q3" value="5"> 少于5小时</label>
+                                <label><input type="radio" name="q3" value="4"> 5-6小时</label>
+                                <label><input type="radio" name="q3" value="1"> 7-8小时</label>
+                                <label><input type="radio" name="q3" value="2"> 8-9小时</label>
+                                <label><input type="radio" name="q3" value="3"> 9小时以上</label>
+                            </div>
+                        </div>
+                        
+                        <div class="question-item">
+                            <p class="question">4. 您是否有午睡的习惯？</p>
+                            <div class="options">
+                                <label><input type="radio" name="q4" value="1"> 从不</label>
+                                <label><input type="radio" name="q4" value="2"> 偶尔</label>
+                                <label><input type="radio" name="q4" value="3"> 经常</label>
+                                <label><input type="radio" name="q4" value="4"> 每天</label>
+                            </div>
+                        </div>
+                        
+                        <div class="question-item">
+                            <p class="question">5. 您睡前是否使用电子设备（手机、平板、电脑等）？</p>
+                            <div class="options">
+                                <label><input type="radio" name="q5" value="1"> 从不</label>
+                                <label><input type="radio" name="q5" value="2"> 偶尔</label>
+                                <label><input type="radio" name="q5" value="3"> 经常</label>
+                                <label><input type="radio" name="q5" value="4"> 总是</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 第二部分：睡眠质量 -->
+                    <div class="form-section">
+                        <h3>睡眠质量</h3>
+                        
+                        <div class="question-item">
+                            <p class="question">6. 您入睡需要多长时间？</p>
+                            <div class="options">
+                                <label><input type="radio" name="q6" value="1"> 少于15分钟</label>
+                                <label><input type="radio" name="q6" value="2"> 15-30分钟</label>
+                                <label><input type="radio" name="q6" value="3"> 30-60分钟</label>
+                                <label><input type="radio" name="q6" value="4"> 1小时以上</label>
+                            </div>
+                        </div>
+                        
+                        <div class="question-item">
+                            <p class="question">7. 您夜间醒来的频率是？</p>
+                            <div class="options">
+                                <label><input type="radio" name="q7" value="1"> 从不或很少</label>
+                                <label><input type="radio" name="q7" value="2"> 偶尔（每周1-2次）</label>
+                                <label><input type="radio" name="q7" value="3"> 经常（每周3-5次）</label>
+                                <label><input type="radio" name="q7" value="4"> 几乎每晚</label>
+                            </div>
+                        </div>
+                        
+                        <div class="question-item">
+                            <p class="question">8. 您是否有打鼾的情况？</p>
+                            <div class="options">
+                                <label><input type="radio" name="q8" value="1"> 从不</label>
+                                <label><input type="radio" name="q8" value="2"> 偶尔</label>
+                                <label><input type="radio" name="q8" value="3"> 经常</label>
+                                <label><input type="radio" name="q8" value="4"> 总是</label>
+                            </div>
+                        </div>
+                        
+                        <div class="question-item">
+                            <p class="question">9. 您是否有睡眠呼吸暂停的情况（呼吸停止片刻后突然大口呼吸）？</p>
+                            <div class="options">
+                                <label><input type="radio" name="q9" value="1"> 从不</label>
+                                <label><input type="radio" name="q9" value="2"> 不确定</label>
+                                <label><input type="radio" name="q9" value="3"> 偶尔</label>
+                                <label><input type="radio" name="q9" value="4"> 经常</label>
+                            </div>
+                        </div>
+                        
+                        <div class="question-item">
+                            <p class="question">10. 您是否做噩梦或有不安的梦境？</p>
+                            <div class="options">
+                                <label><input type="radio" name="q10" value="1"> 从不</label>
+                                <label><input type="radio" name="q10" value="2"> 偶尔</label>
+                                <label><input type="radio" name="q10" value="3"> 经常</label>
+                                <label><input type="radio" name="q10" value="4"> 几乎每晚</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 第三部分：睡眠影响 -->
+                    <div class="form-section">
+                        <h3>睡眠影响</h3>
+                        
+                        <div class="question-item">
+                            <p class="question">11. 您白天感到疲倦或嗜睡的频率是？</p>
+                            <div class="options">
+                                <label><input type="radio" name="q11" value="1"> 从不</label>
+                                <label><input type="radio" name="q11" value="2"> 偶尔</label>
+                                <label><input type="radio" name="q11" value="3"> 经常</label>
+                                <label><input type="radio" name="q11" value="4"> 几乎每天</label>
+                            </div>
+                        </div>
+                        
+                        <div class="question-item">
+                            <p class="question">12. 您是否因为睡眠问题影响工作或日常活动？</p>
+                            <div class="options">
+                                <label><input type="radio" name="q12" value="1"> 从不</label>
+                                <label><input type="radio" name="q12" value="2"> 偶尔</label>
+                                <label><input type="radio" name="q12" value="3"> 经常</label>
+                                <label><input type="radio" name="q12" value="4"> 总是</label>
+                            </div>
+                        </div>
+                        
+                        <div class="question-item">
+                            <p class="question">13. 您是否使用药物帮助睡眠？</p>
+                            <div class="options">
+                                <label><input type="radio" name="q13" value="1"> 从不</label>
+                                <label><input type="radio" name="q13" value="2"> 偶尔</label>
+                                <label><input type="radio" name="q13" value="3"> 经常</label>
+                                <label><input type="radio" name="q13" value="4"> 几乎每晚</label>
+                            </div>
+                        </div>
+                        
+                        <div class="question-item">
+                            <p class="question">14. 您对自己的睡眠质量总体评价是？</p>
+                            <div class="options">
+                                <label><input type="radio" name="q14" value="1"> 非常好</label>
+                                <label><input type="radio" name="q14" value="2"> 较好</label>
+                                <label><input type="radio" name="q14" value="3"> 一般</label>
+                                <label><input type="radio" name="q14" value="4"> 较差</label>
+                                <label><input type="radio" name="q14" value="5"> 非常差</label>
+                            </div>
+                        </div>
+                        
+                        <div class="question-item">
+                            <p class="question">15. 您是否因为睡眠问题而感到焦虑或担忧？</p>
+                            <div class="options">
+                                <label><input type="radio" name="q15" value="1"> 从不</label>
+                                <label><input type="radio" name="q15" value="2"> 偶尔</label>
+                                <label><input type="radio" name="q15" value="3"> 经常</label>
+                                <label><input type="radio" name="q15" value="4"> 总是</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" id="submit-test" class="btn btn-primary">提交评估</button>
+                        <button type="reset" class="btn btn-secondary">重置</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        
+        <section class="assessment-result" id="result-section" style="display: none;">
+            <div class="container">
+                <h2 class="section-title">评估结果</h2>
+                <div class="result-content">
+                    <div class="result-summary">
+                        <h3>您的睡眠质量评分：<span id="sleep-score">0</span></h3>
+                        <div class="score-bar">
+                            <div class="score-level" id="score-level"></div>
+                        </div>
+                        <p id="score-description"></p>
+                    </div>
+                    
+                    <div class="result-details">
+                        <h3>详细分析</h3>
+                        <div id="result-analysis"></div>
+                    </div>
+                    
+                    <div class="result-recommendations">
+                        <h3>改善建议</h3>
+                        <div id="recommendations"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- 页面底部 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>自在美丽</h2>
+                    <p>美丽源于自信，健康成就美丽</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h3>关于我们</h3>
+                        <ul>
+                            <li><a href="../about.html">品牌故事</a></li>
+                            <li><a href="../contact.html">联系我们</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>健康服务</h3>
+                        <ul>
+                            <li><a href="../diet.html">健康饮食</a></li>
+                            <li><a href="../exercise.html">健康锻炼</a></li>
+                            <li><a href="../mental.html">心理支持</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>法律信息</h3>
+                        <ul>
+                            <li><a href="../terms.html">使用条款</a></li>
+                            <li><a href="../privacy.html">隐私政策</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 自在美丽. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('sleep-test-form');
+            const submitButton = document.getElementById('submit-test');
+            const resultSection = document.getElementById('result-section');
+            const sleepScoreElement = document.getElementById('sleep-score');
+            const scoreLevelElement = document.getElementById('score-level');
+            const scoreDescriptionElement = document.getElementById('score-description');
+            const resultAnalysisElement = document.getElementById('result-analysis');
+            const recommendationsElement = document.getElementById('recommendations');
+            
+            submitButton.addEventListener('click', function() {
+                // 检查是否所有问题都已回答
+                const questions = form.querySelectorAll('.question-item');
+                let allAnswered = true;
+                
+                questions.forEach(function(question, index) {
+                    const questionNumber = index + 1;
+                    const radios = question.querySelectorAll(`input[name="q${questionNumber}"]`);
+                    let answered = false;
+                    
+                    radios.forEach(function(radio) {
+                        if (radio.checked) {
+                            answered = true;
+                        }
+                    });
+                    
+                    if (!answered) {
+                        allAnswered = false;
+                    }
+                });
+                
+                if (!allAnswered) {
+                    alert('请回答所有问题后再提交评估。');
+                    return;
+                }
+                
+                // 计算得分
+                let totalScore = 0;
+                let maxPossibleScore = 0;
+                
+                for (let i = 1; i <= 15; i++) {
+                    const selectedOption = form.querySelector(`input[name="q${i}"]:checked`);
+                    if (selectedOption) {
+                        totalScore += parseInt(selectedOption.value);
+                        maxPossibleScore += 5; // 假设每个问题的最高分值为5
+                    }
+                }
+                
+                // 将分数转换为百分比
+                const scorePercentage = Math.round((totalScore / maxPossibleScore) * 100);
+                
+                // 设置得分和评级
+                sleepScoreElement.textContent = scorePercentage;
+                scoreLevelElement.style.width = `${scorePercentage}%`;
+                
+                // 根据得分设置不同的颜色和描述
+                let scoreColor = '';
+                let scoreDescription = '';
+                let analysis = '';
+                let recommendations = '';
+                
+                if (scorePercentage < 30) {
+                    scoreColor = '#4CAF50'; // 绿色 - 良好
+                    scoreDescription = '您的睡眠质量良好！';
+                    analysis = `
+                        <p>您的睡眠状况整体良好，表现出健康的睡眠模式。您可能：</p>
+                        <ul>
+                            <li>有规律的睡眠时间</li>
+                            <li>入睡迅速且睡眠连续</li>
+                            <li>醒来后感到精力充沛</li>
+                            <li>很少或没有睡眠相关问题</li>
+                        </ul>
+                    `;
+                    recommendations = `
+                        <p>继续保持良好的睡眠习惯：</p>
+                        <ul>
+                            <li>维持规律的作息时间</li>
+                            <li>睡前避免使用电子设备</li>
+                            <li>保持适宜的睡眠环境（安静、黑暗、凉爽）</li>
+                            <li>睡前放松活动，如阅读或冥想</li>
+                        </ul>
+                    `;
+                } else if (scorePercentage < 60) {
+                    scoreColor = '#FFC107'; // 黄色 - 一般
+                    scoreDescription = '您的睡眠质量一般，有改善空间。';
+                    analysis = `
+                        <p>您的睡眠质量处于中等水平，存在一些可能影响睡眠质量的因素：</p>
+                        <ul>
+                            <li>睡眠时间不够规律</li>
+                            <li>偶尔入睡困难或夜间醒来</li>
+                            <li>有时醒来后感到疲倦</li>
+                            <li>可能存在轻度睡眠问题</li>
+                        </ul>
+                    `;
+                    recommendations = `
+                        <p>改善睡眠质量的建议：</p>
+                        <ul>
+                            <li>建立规律的睡眠时间表，包括周末</li>
+                            <li>睡前1小时避免使用电子设备</li>
+                            <li>创造有利于睡眠的环境</li>
+                            <li>睡前进行放松活动，如温和的瑜伽或深呼吸</li>
+                            <li>限制咖啡因和酒精的摄入，特别是在下午和晚上</li>
+                        </ul>
+                    `;
+                } else if (scorePercentage < 80) {
+                    scoreColor = '#FF9800'; // 橙色 - 较差
+                    scoreDescription = '您的睡眠质量较差，需要关注。';
+                    analysis = `
+                        <p>您的睡眠质量较差，可能存在以下问题：</p>
+                        <ul>
+                            <li>睡眠时间不规律或不足</li>
+                            <li>经常入睡困难或夜间频繁醒来</li>
+                            <li>醒来后感到疲倦或无精打采</li>
+                            <li>可能存在中度睡眠障碍</li>
+                            <li>睡眠问题可能影响日常生活和工作</li>
+                        </ul>
+                    `;
+                    recommendations = `
+                        <p>改善睡眠质量的重要建议：</p>
+                        <ul>
+                            <li>严格遵守规律的睡眠时间表</li>
+                            <li>睡前2小时避免使用电子设备</li>
+                            <li>睡前避免重体力活动和刺激性食物</li>
+                            <li>尝试睡眠辅助方法，如白噪音、助眠音乐或冥想</li>
+                            <li>如果问题持续，考虑咨询睡眠专家</li>
+                        </ul>
+                    `;
+                } else {
+                    scoreColor = '#F44336'; // 红色 - 很差
+                    scoreDescription = '您的睡眠质量很差，建议寻求专业帮助。';
+                    analysis = `
+                        <p>您的睡眠质量很差，可能存在严重的睡眠问题：</p>
+                        <ul>
+                            <li>严重的入睡困难或维持睡眠困难</li>
+                            <li>睡眠时间极不规律或严重不足</li>
+                            <li>可能存在睡眠呼吸暂停等睡眠障碍</li>
+                            <li>睡眠问题严重影响日常生活和健康</li>
+                            <li>可能伴随情绪问题如焦虑或抑郁</li>
+                        </ul>
+                    `;
+                    recommendations = `
+                        <p>强烈建议：</p>
+                        <ul>
+                            <li>尽快咨询睡眠专家或医生</li>
+                            <li>可能需要进行睡眠监测或其他专业评估</li>
+                            <li>同时实施良好的睡眠卫生习惯</li>
+                            <li>考虑学习压力管理和放松技巧</li>
+                            <li>在专业指导下调整生活方式和环境因素</li>
+                        </ul>
+                    `;
+                }
+                
+                scoreLevelElement.style.backgroundColor = scoreColor;
+                scoreDescriptionElement.textContent = scoreDescription;
+                resultAnalysisElement.innerHTML = analysis;
+                recommendationsElement.innerHTML = recommendations;
+                
+                // 显示结果区域
+                resultSection.style.display = 'block';
+                
+                // 滚动到结果区域
+                resultSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>

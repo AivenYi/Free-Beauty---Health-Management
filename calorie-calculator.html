@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>卡路里计算 - 自在美丽</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #fdf5e6 0%, #fff5ee 100%);
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Microsoft YaHei", sans-serif;
+            color: #333;
+        }
+
+        .calorie-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .calculator-section {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #666;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .calculate-btn {
+            background: #e67e22;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .calculate-btn:hover {
+            background: #d35400;
+            transform: translateY(-2px);
+        }
+
+        .result-section {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .food-suggestions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .food-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .food-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .food-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .food-card-content {
+            padding: 20px;
+        }
+
+        .food-card h3 {
+            color: #e67e22;
+            margin: 0 0 10px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #e67e22;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .section-description {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .tips-section {
+            margin-top: 40px;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .tip-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .tip-card h4 {
+            color: #e67e22;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calorie-container">
+        <h1 class="section-title">卡路里计算器</h1>
+        <p class="section-description">科学计算每日卡路里摄入与消耗，平衡饮食与运动。</p>
+
+        <div class="calculator-section">
+            <form id="calorie-form">
+                <div class="form-group">
+                    <label for="gender">性别</label>
+                    <select id="gender" required>
+                        <option value="male">男性</option>
+                        <option value="female">女性</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="age">年龄</label>
+                    <input type="number" id="age" required min="1" max="120">
+                </div>
+                <div class="form-group">
+                    <label for="height">身高 (cm)</label>
+                    <input type="number" id="height" required min="100" max="250">
+                </div>
+                <div class="form-group">
+                    <label for="weight">体重 (kg)</label>
+                    <input type="number" id="weight" required min="30" max="200">
+                </div>
+                <div class="form-group">
+                    <label for="activity">活动水平</label>
+                    <select id="activity" required>
+                        <option value="1.2">久坐不动</option>
+                        <option value="1.375">轻度活动</option>
+                        <option value="1.55">中度活动</option>
+                        <option value="1.725">高度活动</option>
+                        <option value="1.9">非常活跃</option>
+                    </select>
+                </div>
+                <button type="submit" class="calculate-btn">计算卡路里需求</button>
+            </form>
+
+            <div class="result-section" id="result">
+                <h3>您的每日卡路里需求：</h3>
+                <p id="calorie-result"></p>
+                <p id="weight-suggestion"></p>
+            </div>
+        </div>
+
+        <div class="food-suggestions">
+            <div class="food-card">
+                <img src="images/healthy-breakfast.jpg" alt="健康早餐" onerror="this.src='images/default-food.jpg'">
+                <div class="food-card-content">
+                    <h3>健康早餐推荐</h3>
+                    <p>全麦面包配鸡蛋、牛奶和水果，约300-400卡路里</p>
+                </div>
+            </div>
+            <div class="food-card">
+                <img src="images/healthy-lunch.jpg" alt="健康午餐" onerror="this.src='images/default-food.jpg'">
+                <div class="food-card-content">
+                    <h3>营养午餐搭配</h3>
+                    <p>糙米饭、瘦肉、蔬菜，约500-600卡路里</p>
+                </div>
+            </div>
+            <div class="food-card">
+                <img src="images/healthy-dinner.jpg" alt="健康晚餐" onerror="this.src='images/default-food.jpg'">
+                <div class="food-card-content">
+                    <h3>轻食晚餐方案</h3>
+                    <p>鸡胸肉沙拉、藜麦，约400-500卡路里</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <h2>健康饮食小贴士</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>均衡饮食原则</h4>
+                    <p>每天摄入充足的蛋白质、碳水化合物和健康脂肪，保持营养均衡。多吃蔬菜水果，少吃加工食品。</p>
+                </div>
+                <div class="tip-card">
+                    <h4>饮食建议</h4>
+                    <p>少食多餐，控制每餐份量。晚餐要适量，避免深夜进食。注意补充水分，每天至少喝8杯水。</p>
+                </div>
+                <div class="tip-card">
+                    <h4>运动搭配</h4>
+                    <p>配合适度运动，每周进行3-5次有氧运动，每次30-60分钟。可以选择步行、游泳、骑车等运动方式。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('calorie-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const gender = document.getElementById('gender').value;
+            const age = parseInt(document.getElementById('age').value);
+            const height = parseInt(document.getElementById('height').value);
+            const weight = parseInt(document.getElementById('weight').value);
+            const activity = parseFloat(document.getElementById('activity').value);
+            
+            let bmr;
+            if (gender === 'male') {
+                bmr = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
+            } else {
+                bmr = 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
+            }
+            
+            const dailyCalories = Math.round(bmr * activity);
+            
+            document.getElementById('calorie-result').textContent = 
+                `维持体重需要的每日卡路里：${dailyCalories} 卡路里`;
+            
+            const weightSuggestion = weight > 25 * Math.pow(height/100, 2) ?
+                `减重建议：每日摄入${dailyCalories - 500}卡路里` :
+                `保持健康体重：继续保持当前饮食习惯`;
+            
+            document.getElementById('weight-suggestion').textContent = weightSuggestion;
+            document.getElementById('result').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

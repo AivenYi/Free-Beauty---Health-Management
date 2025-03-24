@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>王教练专家咨询 - 自在美丽</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* 专家咨询页面特定样式 */
+        .doctor-profile {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            align-items: flex-start;
+        }
+        
+        .doctor-image {
+            flex: 0 0 300px;
+        }
+        
+        .doctor-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .doctor-info {
+            flex: 1;
+        }
+        
+        .doctor-specialties {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .specialty-tag {
+            background-color: var(--light-color);
+            color: var(--accent-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .consultation-section {
+            margin-top: 3rem;
+        }
+        
+        .chat-container {
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 2rem;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .chat-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .chat-messages {
+            height: 400px;
+            overflow-y: auto;
+            padding: 1rem;
+            background-color: #f9f9f9;
+        }
+        
+        .message {
+            margin-bottom: 1rem;
+            max-width: 80%;
+        }
+        
+        .user-message {
+            margin-left: auto;
+            background-color: #e1f5fe;
+            padding: 0.8rem;
+            border-radius: 10px 10px 0 10px;
+        }
+        
+        .coach-message {
+            background-color: white;
+            padding: 0.8rem;
+            border-radius: 10px 10px 10px 0;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        .chat-input {
+            display: flex;
+            padding: 1rem;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .chat-input input {
+            flex: 1;
+            padding: 0.8rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            margin-right: 0.5rem;
+        }
+        
+        .chat-input button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .plan-section {
+            margin-top: 3rem;
+            padding: 2rem;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+        }
+        
+        .plan-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .plan-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .plan-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .plan-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .doctor-profile {
+                flex-direction: column;
+            }
+            
+            .doctor-image {
+                flex: 0 0 100%;
+                margin-bottom: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="chinese-style">
+    <!-- 页面头部 -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>自在美丽</h1>
+                <p class="slogan">美丽源于自信，健康成就美丽</p>
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="打开菜单">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="profile.html">个人档案</a></li>
+                    <li><a href="diet.html">健康饮食</a></li>
+                    <li><a href="exercise.html">健康锻炼</a></li>
+                    <li><a href="mental.html">心理支持</a></li>
+                    <li><a href="community.html">社区互动</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主要内容区 -->
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>王教练专家咨询</h1>
+                <p>资深健身教练，为您提供个性化健身方案</p>
+            </div>
+        </section>
+
+        <section class="page-content">
+            <div class="container">
+                <div class="content-wrapper">
+                    <!-- 教练个人资料 -->
+                    <div class="doctor-profile">
+                        <div class="doctor-image">
+                            <img src="images\屏幕截图 2025-03-23 100004.png" alt="王教练" class="rounded-image">
+                        </div>
+                        <div class="doctor-info">
+                            <h2>王教练</h2>
+                            <p class="expert-title">资深健身教练，国家一级健身指导员</p>
+                            <p class="expert-desc">王教练拥有10年健身指导经验，精通各类健身训练方法，专注于科学健身、体态矫正、力量训练等领域。他注重个性化训练计划的制定，帮助不同基础的人群实现健康塑形的目标。</p>
+                            <div class="doctor-specialties">
+                                <span class="specialty-tag">科学健身</span>
+                                <span class="specialty-tag">体态矫正</span>
+                                <span class="specialty-tag">力量训练</span>
+                                <span class="specialty-tag">有氧训练</span>
+                                <span class="specialty-tag">康复训练</span>
+                            </div>
+                            <p>王教练致力于将科学的健身理念与个性化的训练方案相结合，帮助人们在忙碌的生活中找到适合自己的健身方式。他相信，健康的体魄是幸福生活的基础。</p>
+                        </div>
+                    </div>
+
+                    <!-- 咨询服务 -->
+                    <div class="consultation-section">
+                        <div class="section-header">
+                            <div class="decorative-element left"></div>
+                            <h2 class="section-title">咨询服务</h2>
+                            <div class="decorative-element right"></div>
+                        </div>
+                        <p class="section-intro">王教练提供专业的一对一咨询服务，根据您的身体状况和健身需求，为您量身定制健身方案。</p>
+                        
+                        <div class="consultation-packages">
+                            <h3>咨询套餐</h3>
+                            <div class="packages-grid">
+                                <div class="package-card">
+                                    <div class="package-header">
+                                        <h4>单次咨询</h4>
+                                        <div class="package-price">¥298</div>
+                                    </div>
+                                    <div class="package-content">
+                                        <ul>
+                                            <li>60分钟专家一对一咨询</li>
+                                            <li>体态评估</li>
+                                            <li>个性化健身建议</li>
+                                            <li>7天在线随访</li>
+                                        </ul>
+                                        <button class="btn btn-primary" onclick="showChat()">立即咨询</button>
+                                    </div>
+                                </div>
+                                <div class="package-card featured">
+                                    <div class="package-header">
+                                        <h4>季度健身计划</h4>
+                                        <div class="package-price">¥898</div>
+                                    </div>
+                                    <div class="package-content">
+                                        <ul>
+                                            <li>3次60分钟专家一对一咨询</li>
+                                            <li>全面体态与体能评估</li>
+                                            <li>个性化健身训练计划</li>
+                                            <li>季度健身进度跟踪</li>
+                                            <li>专属营养膳食建议</li>
+                                            <li>90天在线咨询支持</li>
+                                        </ul>
+                                        <button class="btn btn-primary" onclick="showChat()">立即咨询</button>
+                                    </div>
+                                </div>
+                                <div class="package-card">
+                                    <div class="package-header">
+                                        <h4>年度健身管理</h4>
+                                        <div class="package-price">¥2598</div>
+                                    </div>
+                                    <div class="package-content">
+                                        <ul>
+                                            <li>8次60分钟专家一对一咨询</li>
+                                            <li>全面体态与体能评估</li>
+                                            <li>四季调整的健身方案</li>
+                                            <li>定制营养膳食计划</li>
+                                            <li>优先预约权</li>
+                                            <li>全年在线咨询支持</li>
+                                        </ul>
+                                        <button class="btn btn-primary" onclick="showChat()">立即咨询</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 在线咨询 -->
+                    <div class="chat-section" id="chatSection" style="display: none;">
+                        <div class="section-header">
+                            <div class="decorative-element left"></div>
+                            <h2 class="section-title">在线咨询</h2>
+                            <div class="decorative-element right"></div>
+                        </div>
+                        <p class="section-intro">您可以在这里向王教练提问，获取专业的健身建议。</p>
+                        
+                        <div class="chat-container">
+                            <div class="chat-header">
+                                <h3>与王教练对话</h3>
+                            </div>
+                            <div class="chat-messages" id="chatMessages">
+                                <div class="message coach-message">
+                                    <p>您好，我是王教练。很高兴为您提供健身咨询服务。请问您有什么健身问题需要咨询？</p>
+                                </div>
+                            </div>
+                            <div class="chat-input">
+                                <input type="text" id="userMessage" placeholder="请输入您的问题..." onkeypress="if(event.keyCode == 13) sendMessage()">
+                                <button onclick="sendMessage()">发送</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 健身方案 -->
+                    <div class="plan-section" id="planSection" style="display: none;">
+                        <div class="plan-header">
+                            <div class="decorative-element left"></div>
+                            <h2 class="section-title">您的个性化健身方案</h2>
+                            <div class="decorative-element right"></div>
+                        </div>
+                        <div class="plan-content" id="planContent">
+                            <!-- 健身方案内容将通过JavaScript动态生成 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚部分 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>自在美丽</h2>
+                    <p>美丽源于自信，健康成就美丽</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h3>关于我们</h3>
+                        <ul>
+                            <li><a href="about.html">品牌故事</a></li>
+                            <li><a href="about.html#team">团队介绍</a></li>
+                            <li><a href="contact.html">联系我们</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>服务支持

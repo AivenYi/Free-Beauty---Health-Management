@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>压力指数测试 - 自在美丽</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="chinese-style">
+    <!-- 页面头部 -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>自在美丽</h1>
+                <p class="slogan">美丽源于自信，健康成就美丽</p>
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="打开菜单">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="../profile.html">个人档案</a></li>
+                    <li><a href="../diet.html">健康饮食</a></li>
+                    <li><a href="../exercise.html">健康锻炼</a></li>
+                    <li><a href="../mental.html">心理支持</a></li>
+                    <li><a href="../community.html">社区互动</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主要内容区 -->
+    <main>
+        <section class="page-header assessment-header">
+            <div class="container">
+                <h1>压力指数测试</h1>
+                <p>了解您当前的压力水平，获取个性化减压建议</p>
+            </div>
+        </section>
+
+        <section class="assessment-intro">
+            <div class="container">
+                <div class="intro-content">
+                    <div class="intro-text">
+                        <h2>关于压力指数测试</h2>
+                        <p>压力是现代生活中不可避免的一部分，适度的压力可以激发潜能，但过度的压力会对身心健康造成负面影响。本测试基于心理学研究，帮助您评估当前的压力水平，并提供针对性的减压建议。</p>
+                        <p>测试包含20个问题，涵盖工作、生活、人际关系等多个方面，完成测试大约需要5分钟时间。</p>
+                    </div>
+                    <div class="intro-image">
+                        <img src="https://via.placeholder.com/500x300/F0F8FF/000000?text=压力评估" alt="压力评估图">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="assessment-form">
+            <div class="container">
+                <h2 class="section-title">开始测试</h2>
+                <form id="stress-test-form" class="test-form">
+                    <!-- 第一部分：工作压力 -->
+                    <div class="form-section">
+                        <h3>工作/学习压力</h3>
+                        
+                        <div class="question-item">
+                            <p class="question">1. 您经常感到工作/学习任务过重，难以完成吗？</p>
+                            <div class="options">
+                                <label><input type="radio" name="q1" value="1"> 从不</label>
+                                <label><input type="radio" name="q1" value="2"> 偶尔</label>
+                                <label><input type="radio" name="q1" value="3"> 有时</label>
+                                <label><input type="radio" name="q1" value="4"> 经常</label>
+                                <label><input type="radio" name="q1" value="5"> 总是</label>
+                            </div>
+                        </div>
+                        
+                        <div class="question-item">
+                            <p class="question">2. 您是否因为工作/学习压力而影响睡眠？</p>
+                            <div class="options">
+                                <label><input type="radio" name="q2" value="1"> 从不</label>
+                                <label><input type="radio" name="q2" value="2"> 偶尔</label>
+                                <label><input type="radio" name="q2" value="3"> 有时</label>
+                                <label><input type="radio" name="q2" value="4"> 经常</label>
+                                <label><input type="radio" name="q2" value="5"> 总是</label>
+                            </div>
+                        </div>
+                        
+                        <div class="question-item">
+                            <p class="question">3. 您是否感到工作/学习环境充满竞争和压力？</p>
+                            <div class="options">
+                                <label><input type="radio" name="q3" value="1"> 从不</label>
+                                <label><input type="radio" name="q3" value="2"> 偶尔</label>
+                                <label><input type="radio" name="q3" value="3"> 有时</label>
+                                <label><input type="radio" name="q3" value="4"> 经常</label>
+                                <label><input type="radio" name="q3" value="5"> 总是</label>
+                            </div>
+                        </div>
+                        
+                        <div class="question-item">
+                            <p class="question">4. 您是否因为工作/学习压力而感到身体不适（如头痛、胃痛等）？</p>
+                            <div class="options">
+                                <label><input type="radio" name="q4" value="1"> 从不</label>
+                                <label><input type="radio" name="q4" value="2"> 偶尔</label>
+                                <label><input type="radio" name="q4" value="3"> 有时</label>
+                                <label><input type="radio" name="q4" value="4"> 经常</label>
+                                <label><input type="radio" name="q4" value="5"> 总是</label>
+                            </div>
+                        </div>
+                        
+                        <div class="question-item">
+                            <p class="question">5. 您是否难以在工作/学习和生活之间取得平衡？</p>
+                            <div class="options">
+                                <label><input type="radio" name="q5" value="1"> 从不</label>
+                                <label><input type="radio" name="q5" value="2"> 偶尔</label>
+                                <label><input type="radio" name="q5" value="3"> 有时</label>
+                                <label><input type="radio" name="q5" value="4"> 经常</label>
+                                <label><input type="radio" name="q5" value="5"> 总是</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 第二部分：生活压力 -->
+                    <div class="form-section">
+                        <h3>生活压力</h3>
+                        
+                        <div class="question-item">
+                            <p class="question">6. 您是否经常为经济问题而担忧？</p>
+                            <div class="options">
+                                <label><input type="radio" name="q6" value="1"> 从不</label>
+                                <label><input type="radio" name="q6" value="2"> 偶尔</label>
+                                <label><input type="radio" name="q6" value="3"> 有时</label>
+                                <label><input type="radio" name="q6" value="4"> 经常</label>
+                                <label><input type="radio" name="q6" value="5"> 总是</label>
+                            </div>
+                        </div>
+                        
+                        <div class="question-item">
+                            <p class="question">7. 您是否感到生活中的变化让您难以适应？</p>
+                            <div class="options">
+                                <label><input type="radio" name="q7" value="1"> 从不</label>
+                                <label><input type="radio" name="q7" value="2"> 偶尔</label>
+                                <label><input type="radio" name="q7" value="3"> 有时</label>
+                                <label><input type="radio" name="q7" value="4"> 经常</label>
+                                <label><input type="radio" name="q7" value="5"> 总是</label>
+                            </div>
+                        </div>
+                        
+                        <div class="question-item">
+                            <p class="question">8. 您是否因为日常琐事而感到烦躁？</p>
+                            <div class="options">
+                                <label><input type="radio" name="q8" value="1"> 从不</label>
+                                <label><input type="radio" name="q8" value="2"> 偶尔</label>
+                                <label><input type="radio" name="q8" value="3"> 有时</label>
+                                <label><input type="radio" name="q8" value="4"> 经常</label>
+                                <label><input type="radio" name="q8" value="5"> 总是</label>
+                            </div>
+                        </div>
+                        
+                        <div class="question-item">
+                            <p class="question">9. 您是否感到时间不够用，总是匆忙赶时间？</p>
+                            <div class="options">
+                                <label><input type="radio" name="q9" value="1"> 从不</label>
+                                <label><input type="radio" name="q9" value="2"> 偶尔</label>
+                                <label><input type="radio" name="q9" value="3"> 有时</label>
+                                <label><input type="radio" name="q9" value="4"> 经常</label>
+                                <label><input type="radio" name="q9" value="5"> 总是</label>
+                            </div>
+                        </div>
+                        
+                        <div class="question-item">
+                            <p class="question">10. 您是否因为未来的不确定性而感到焦虑？</p>
+                            <div class="options">
+                                <label><input type="radio" name="q10" value="1"> 从不</label>
+                                <label><input type="radio" name="q10" value="2"> 偶尔</label>
+                                <label><input type="radio" name="q10" value="3"> 有时</label>
+                                <label><input type="radio" name="q10" value="4"> 经常</label>
+                                <label><input type="radio" name="q10" value="5"> 总是</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 第三部分：人际关系压力 -->
+                    <div class="form-section">
+                        <h3>人际关系压力</h3>
+                        
+                        <div class="question-item">
+                            <p class="question">11. 您是否因为人际关系问题而感到困扰？</p>
+                            <div class="options">
+                                <label><input type="radio" name="q11" value="1"> 从不</label>
+                                <label><input type="radio" name="q11" value="2"> 偶尔</label>
+                                <label><input type="radio" name="q11" value="3"> 有时</label>
+                                <label><input type="radio" name="q11" value="4"> 经常</label>
+                                <label><input type="radio" name="q11" value="5"> 总是</label>
+                            </div>
+                        </div>
+                        
+                        <div class="question-item">
+                            <p class="question">12. 您是否感到难以表达自己的真实想法和感受？</p>
+                            <div class="options">
+                                <label><input type="radio" name="q12" value="1"> 从不</label>
+                                <label><input type="radio" name="q12" value="2"> 偶尔</label>
+                                <label><input type="radio" name="q12" value="3"> 有时</label>
+                                <label><input type="radio" name="q12" value="4"> 经常</label>
+                                <label><input type="radio" name="q12" value="5"> 总是</label>
+                            </div>
+                        </div>
+                        
+                        <div class="question-item">
+                            <p class="question">13. 您是否因为家庭关系而感到压力？</p>
+                            <div class="options">
+                                <label><input type="radio" name="q13" value="1"> 从不</label>
+                                <label><input type="radio" name="q13" value="2"> 偶尔</label>
+                                <label><input type="radio" name="q13" value="3"> 有时</label>
+                                <label><input type="radio" name="q13" value="4"> 经常</label>
+                                <label><input type="radio" name="q13" value="5"> 总是</label>
+                            </div>
+                        </div>
+                        
+                        <div class="question-item">
+                            <p class="question">14. 您是否感到社交活动让您疲惫不堪？</p>
+                            <div class="options">
+                                <label><input type="radio" name="q14" value="1"> 从不</label>
+                                <label><input type="radio" name="q14" value="2"> 偶尔</label>
+                                <label><input type="radio" name="q14" value="3">

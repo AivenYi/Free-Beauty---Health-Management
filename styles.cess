@@ -1,0 +1,434 @@
+/* 社区页面样式 */
+.community-events {
+    padding: var(--spacing-xl) 0;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.event-card {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+.event-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover .event-image img {
+    transform: scale(1.05);
+}
+
+.event-content {
+    padding: var(--spacing-lg);
+}
+
+.event-date {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.9rem;
+}
+
+.event-location {
+    color: var(--accent-color);
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.9rem;
+}
+
+/* 社区论坛样式 */
+.community-forum {
+    padding: var(--spacing-xl) 0;
+    background-color: rgba(212, 167, 106, 0.1);
+}
+
+.forum-topics {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+}
+
+.topic-item {
+    padding: var(--spacing-md);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.topic-item:last-child {
+    border-bottom: none;
+}
+
+.topic-item:hover {
+    background-color: rgba(212, 167, 106, 0.05);
+}
+
+.topic-icon {
+    margin-right: var(--spacing-md);
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+}
+
+.topic-content {
+    flex: 1;
+}
+
+.topic-title {
+    margin-bottom: var(--spacing-xs);
+    color: var(--dark-color);
+}
+
+.topic-meta {
+    font-size: 0.8rem;
+    color: var(--accent-color);
+}
+
+.topic-replies {
+    background-color: var(--secondary-color);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+/* 四季养生标签页样式 */
+.season-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--spacing-lg);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.tab-btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--body-font);
+    font-size: 1rem;
+    color: var(--dark-color);
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.tab-btn:after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.tab-btn.active {
+    color: var(--primary-color);
+}
+
+.tab-btn.active:after {
+    width: 100%;
+}
+
+.season-content {
+    display: none;
+}
+
+.season-content.active {
+    display: block;
+}
+
+/* 中医体质测试样式 */
+.tcm-test {
+    padding: var(--spacing-xl) 0;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.test-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-lg);
+}
+
+.test-container {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    box-shadow: var(--box-shadow);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.test-progress {
+    margin-bottom: var(--spacing-lg);
+}
+
+.progress-bar {
+    height: 8px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: var(--spacing-xs);
+}
+
+.progress {
+    height: 100%;
+    background-color: var(--secondary-color);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    text-align: right;
+    font-size: 0.9rem;
+    color: var(--accent-color);
+}
+
+.test-question h3 {
+    margin-bottom: var(--spacing-md);
+}
+
+.options {
+    margin-bottom: var(--spacing-lg);
+}
+
+.option {
+    margin-bottom: var(--spacing-sm);
+}
+
+.option label {
+    margin-left: var(--spacing-xs);
+    cursor: pointer;
+}
+
+.test-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.test-result {
+    text-align: center;
+}
+
+.result-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+}
+
+@media (max-width: 768px) {
+    .result-main {
+        flex-direction: column;
+    }
+}
+
+.result-icon {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--secondary-color);
+}
+
+.result-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.result-type h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.result-description {
+    text-align: left;
+}
+
+.result-advice {
+    background-color: rgba(212, 167, 106, 0.1);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+    text-align: left;
+}
+
+.advice-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-md);
+}
+
+.advice-item {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.advice-item h4 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.1rem;
+}
+
+.result-actions {
+    margin-top: var(--spacing-lg);
+}
+
+/* 职业健康专区样式 */
+.occupation-health {
+    padding: var(--spacing-xl) 0;
+    background-color: rgba(212, 167, 106, 0.1);
+}
+
+.occupation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.occupation-card {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+.occupation-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.occupation-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.occupation-content {
+    padding: var(--spacing-lg);
+}
+
+.occupation-title {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.health-tips {
+    margin-top: var(--spacing-md);
+}
+
+.health-tips li {
+    margin-bottom: var(--spacing-xs);
+}
+
+/* 社交分享按钮样式 */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--secondary-color);
+}
+
+.social-links img {
+    width: 20px;
+    height: 20px;
+}
+
+/* 添加到现有样式表末尾 */
+
+/* 子页面通用样式 */
+.page-header {
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+    position: relative;
+}
+
+/* 季节性页面头部样式 */
+.season-header {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.spring-header {
+    background-color: #4CAF50; /* 春季绿色 */
+    background-image: linear-gradient(to right, #4CAF50, #8BC34A);
+}
+
+.summer-header {
+    background-color: #2196F3; /* 夏季蓝色 */
+    background-image: linear-gradient(to right, #2196F3, #03A9F4);
+}
+
+.autumn-header {
+    background-color: #FF9800; /* 秋季橙色 */
+    background-image: linear-gradient(to right, #FF9800, #F57C00);
+}
+
+.winter-header {
+    background-color: #3F51B5; /* 冬季靛蓝色 */
+    background-image: linear-gradient(to right, #3F51B5, #5C6BC0);
+}
+
+.page-content {
+    padding: var(--spacing-xl) 0;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.content-wrapper {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    box-shadow: var(--box-shadow);
+}

@@ -1,0 +1,33 @@
+/* 基础变量和全局样式 */
+:root {
+    --primary-color: #8C2318;
+    --secondary-color: #D4A76A;
+    --accent-color: #3A5169;
+    --light-color: #F7F3E9;
+    --dark-color: #2C1E1E;
+    --success-color: #7A8B50;
+    --warning-color: #D9B166;
+    
+    --body-font: 'Noto Serif SC', serif;
+    --heading-font: 'Noto Serif SC', serif;
+    
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    
+    --border-radius: 4px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 全局样式 */
+body {
+    font-family: var(--body-font);
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: #f9f5f0;
+    background-image: url('../images/rice-paper.png');
+    background-repeat: repeat;
+    background-position: center;
+}

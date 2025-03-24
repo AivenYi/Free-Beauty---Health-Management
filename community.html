@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社区互动 - 自在美丽</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="chinese-style">
+    <!-- 页面头部 -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>自在美丽</h1>
+                <p class="slogan">美丽源于自信，健康成就美丽</p>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="profile.html">个人档案</a></li>
+                    <li><a href="diet.html">健康饮食</a></li>
+                    <li><a href="exercise.html">健康锻炼</a></li>
+                    <li><a href="mental.html">心理支持</a></li>
+                    <li><a href="community.html" class="active">社区互动</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 社区横幅 -->
+        <section class="community-banner">
+            <div class="container">
+                <h1>美丽社区</h1>
+                <p>在这里，遇见更好的自己，认识志同道合的朋友</p>
+            </div>
+        </section>
+
+        <!-- 热门活动 -->
+        <section class="community-events">
+            <div class="container">
+                <h2 class="section-title">热门活动</h2>
+                <div class="event-grid">
+                    <div class="event-card">
+                        <div class="event-image">
+                            <img src="images\屏幕截图 2025-03-23 093551.png" alt="瑜伽工作坊" onerror="this.src='https://via.placeholder.com/400x300/FFE4E1/000000?text=瑜伽工作坊'">
+                        </div>
+                        <div class="event-content">
+                            <span class="event-date">2024年1月20日</span>
+                            <h3>冬季瑜伽工作坊</h3>
+                            <p class="event-location">线下 · 北京市朝阳区健康中心</p>
+                            <p>专业瑜伽导师带领，适合初学者的冬季养生瑜伽课程。</p>
+                            <button class="btn btn-primary" onclick="joinEvent('yoga')">立即报名</button>
+                        </div>
+                    </div>
+
+                    <div class="event-card">
+                        <div class="event-image">
+                            <img src="images\屏幕截图 2025-03-23 093638.png" alt="烹饪课程" onerror="this.src='https://via.placeholder.com/400x300/98FB98/000000?text=健康烹饪课'">
+                        </div>
+                        <div class="event-content">
+                            <span class="event-date">2024年1月25日</span>
+                            <h3>健康烹饪课程</h3>
+                            <p class="event-location">线上直播</p>
+                            <p>跟随营养师学习健康美味的烹饪技巧，打造专属健康餐。</p>
+                            <button class="btn btn-primary" onclick="joinEvent('cooking')">立即报名</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 用户故事分享 -->
+        <section class="user-stories">
+            <div class="container">
+                <h2 class="section-title">蜕变故事</h2>
+                <div class="story-grid">
+                    <div class="story-card">
+                        <div class="story-image">
+                            <img src="images\屏幕截图 2025-03-23 094856.png" alt="小美的故事" onerror="this.src='https://via.placeholder.com/300x400/FFF0F5/000000?text=蜕变故事'">
+                        </div>
+                        <div class="story-content">
+                            <h3>小美的蜕变之旅</h3>
+                            <p>"通过三个月的坚持，我不仅收获了健康的身体，更重要的是找到了自信..."</p>
+                            <button class="btn btn-secondary" onclick="readStory('story1')">阅读全文</button>
+                        </div>
+                    </div>
+
+                    <div class="story-card">
+                        <div class="story-image">
+                            <img src="images\屏幕截图 2025-03-23 095046.png" alt="阿华的故事" onerror="this.src='https://via.placeholder.com/300x400/E6E6FA/000000?text=成功故事'">
+                        </div>
+                        <div class="story-content">
+                            <h3>阿华的健康日记</h3>
+                            <p>"从不懂养生到现在能给朋友们建议，这一路的变化让我感触良多..."</p>
+                            <button class="btn btn-secondary" onclick="readStory('story2')">阅读全文</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 专家问答 -->
+        <section class="expert-qa">
+            <div class="container">
+                <h2 class="section-title">专家问答</h2>
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="expert-info">
+                            <img src="images\屏幕截图 2025-03-23 095316.png" alt="营养专家" onerror="this.src='https://via.placeholder.com/100x100/FFB6C1/000000?text=专家'">
+                            <div>
+                                <h3>李医生</h3>
+                                <p>营养学专家</p>
+                            </div>
+                        </div>
+                        <div class="qa-content">
+                            <h4>如何科学饮食减重？</h4>
+                            <p>科学的减重不是节食，而是合理搭配营养，控制热量摄入...</p>
+                            <button class="btn btn-secondary" onclick="showAnswer('qa1')">查看回答</button>
+                            <a href="doctor-li.html" class="btn btn-primary" style="margin-top: 10px; display: block; text-align: center; font-weight: bold;">咨询李医生</a>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="expert-info">
+                            <img src="images\屏幕截图 2025-03-23 100004.png" alt="健身教练" onerror="this.src='https://via.placeholder.com/100x100/87CEEB/000000?text=教练'">
+                            <div>
+                                <h3>王教练</h3>
+                                <p>资深健身教练</p>
+                            </div>
+                        </div>
+                        <div class="qa-content">
+                            <h4>零基础如何开始健身？</h4>
+                            <p>建议从简单的有氧运动开始，循序渐进地增加训练强度...</p>
+                            <button class="btn btn-secondary" onclick="showAnswer('qa2')">查看回答</button>
+                            <a href="coach-wang.html" class="btn btn-primary" style="margin-top: 10px; display: block; text-align: center; font-weight: bold;">咨询王教练</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 社区讨论区 -->
+        <section class="community-forum">
+            <div class="container">
+                <h2 class="section-title">热门话题</h2>
+                <div class="topic-grid">
+                    <div class="topic-card">
+                        <h3>#冬季养生攻略#</h3>
+                        <p>分享你的冬季养生秘诀，让这个冬天更健康！</p>
+                        <div class="topic-stats">
+                            <span>参与人数：1280</span>
+                            <span>讨论数：326</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="joinDiscussion('winter-health')">参与讨论</button>
+                    </div>
+
+                    <div class="topic-card">
+                        <h3>#21天运动打卡#</h3>
+                        <p>一起参与21天运动挑战，培养健康习惯！</p>
+                        <div class="topic-stats">
+                            <span>参与人数：2156</span>
+                            <span>讨论数：892</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="joinDiscussion('exercise-challenge')">参与讨论</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚部分保持不变 -->
+</body>
+</html>

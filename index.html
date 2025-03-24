@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自在美丽 - 健康自信APP</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="image-styles.css">
+    <!-- 添加网页图标 -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <!-- 引入中文字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="自在美丽 - 基于中国传统养生智慧的健康管理平台，提供个性化健康方案、科学饮食指导和心理健康支持">
+    <meta name="keywords" content="健康管理, 中医养生, 饮食调理, 心理健康, 传统文化">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "自在美丽",
+        "url": "https://yourdomain.com",
+        "description": "融合传统智慧与现代科学的健康管理平台"
+    }
+    </script>
+    <style>
+        #sakura-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999; /* 降低z-index值，确保不会覆盖导航栏 */
+        }
+        
+        .sakura {
+            position: absolute;
+            background: #ffd1dc;
+            border-radius: 50%;
+            box-shadow: 0 0 3px #ffd1dc;
+            opacity: 0.6;
+            pointer-events: none;
+            transition: transform 0.1s ease;
+        }
+    </style>
+</head>
+<body class="chinese-style">
+    <div id="sakura-container"></div>
+    <!-- 页面头部 -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>自在美丽</h1>
+                <p class="slogan">美丽源于自信，健康成就美丽</p>
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="打开菜单">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="active">首页</a></li>
+                    <li><a href="profile.html">个人档案</a></li>
+                    <li><a href="diet.html">健康饮食</a></li>
+                    <li><a href="exercise.html">健康锻炼</a></li>
+                    <li><a href="mental.html">心理支持</a></li>
+                    <li><a href="community.html">社区互动</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主要内容区 -->
+    <main>
+        <!-- 中国风横幅 -->
+        <section class="chinese-banner">
+            <div class="container">
+                <div class="banner-content">
+                    <h2 class="chinese-heading">内外兼修 · 自在美丽</h2>
+                    <p class="chinese-subheading">修身养性，内外兼修，方得真我</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 每日鼓励语区域 -->
+        <section class="daily-quote">
+            <div class="container">
+                <div class="quote-card">
+                    <h2>今日雅言</h2>
+                    <blockquote>
+                        <p>"美不在外貌之华，而在心灵之境。修身养性，内外兼修，方得真我。"</p>
+                    </blockquote>
+                    <button class="btn btn-primary">分享此言</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 应用介绍区域 - 修复重复嵌套问题 -->
+        <section class="app-intro">
+            <div class="container">
+                <h2 class="section-title">关于"自在美丽"</h2>
+                <div class="intro-content">
+                    <div class="intro-text">
+                        <p>在当今社会，许多人因为"服美役"现象而对自己的外表感到不自信。我们相信，每个人都自己独特的美丽，健康的身心是最珍贵的财富。</p>
+                        <p>"自在美丽"致力于帮助您：</p>
+                        <ul>
+                            <li>建立健康的自我认知和身体形象</li>
+                            <li>提供科学的健康饮食和锻炼建议</li>
+                            <li>通过每日鼓励和支持，增强自信心</li>
+                            <li>创建一个积极健康的社区环境</li>
+                        </ul>
+                    </div>
+                    <div class="intro-image">
+                        <img src="images\微信图片_20250322125343.jpg" alt="健康生活方式插图" onerror="this.src='images/placeholder.jpg'">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 用户故事区域 - 修复英文混入问题 -->
+        <section class="success-stories">
+            <div class="container">
+                <h2 class="section-title">用户故事</h2>
+                <div class="story-carousel">
+                    <div class="story-card">
+                        <div class="story-content">
+                            <p class="story-text">"通过'自在美丽'，我学会了接纳自己的身体，找到了健康减重的方法，现在的我不仅更健康，而且更加自信！"</p>
+                            <p class="story-author">— 小林，26岁</p>
+                        </div>
+                    </div>
+                    <!-- 添加更多用户故事 -->
+                    <div class="story-card">
+                        <div class="story-content">
+                            <p class="story-text">"作为一名IT从业者，长期久坐导致我腰部不适。通过'自在美丽'的职业健康方案，我学会了正确的坐姿和办公室运动，腰痛明显改善！"</p>
+                            <p class="story-author">— 张工，32岁</p>
+                        </div>
+                    </div>
+                    <div class="story-card">
+                        <div class="story-content">
+                            <p class="story-text">"以前总是盲目跟风各种护肤品，皮肤反而越来越差。跟着'自在美丽'的中医养生方案调理后，肌肤状态有了明显改善，也省下了不少钱！"</p>
+                            <p class="story-author">— 李娜，28岁</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-prev" aria-label="上一个故事" onclick="prevStory()">◀</button>
+                    <button class="carousel-next" aria-label="下一个故事" onclick="nextStory()">▶</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 健康资讯 - 修复重复结构和英文内容 -->
+        <section class="health-news">
+            <div class="container">
+                <h2 class="section-title">健康资讯</h2>
+                <p class="section-intro">了解最新健康知识，掌握科学养生方法</p>
+                
+                <div class="news-grid">
+                    <div class="news-card">
+                        <div class="news-image">
+                            <img src="images\了解最新健康知识，掌握科学养生方法健康新闻中医养生与现代生活的完美结合1.jpeg" alt="健康新闻" class="rounded-image" onerror="this.src='images/placeholder.jpg'">
+                        </div>
+                        <div class="news-content">
+                            <span class="news-date">2023-10-15</span>
+                            <h3>中医养生与现代生活的完美结合</h3>
+                            <p>传统中医养生智慧如何在快节奏的现代生活中得到应用？本文为您详细解析...</p>
+                            <a href="news1.html" class="read-more">阅读全文 →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="news-card">
+                        <div class="news-image">
+                            <img src="images\情绪与健康：中医情志养生法中医认为情志过极会导致疾病，如何通过调节情绪来保持身心健康？2.jpeg" alt="健康新闻" class="rounded-image" onerror="this.src='images/placeholder.jpg'">
+                        </div>
+                        <div class="news-content">
+                            <span class="news-date">2023-10-10</span>
+                            <h3>情绪与健康：中医情志养生法</h3>
+                            <p>中医认为情志过极会导致疾病，如何通过调节情绪来保持身心健康？</p>
+                            <a href="news2.html" class="read-more">阅读全文 →</a>
+                        </div>
+                    </div>
+
+                    <div class="news-card">
+                        <div class="news-image">
+                            <img src="images\颈椎健康：中医理疗新发现最新founded发现，定期进行特定穴位按摩可有效缓解办公族的颈椎不适...1.jpeg" alt="健康新闻" class="rounded-image" onerror="this.src='images/placeholder.jpg'">
+                        </div>
+                        <!-- 修复英文单词混入的问题 -->
+                        <div class="news-content">
+                            <span class="news-date">2023-10-05</span>
+                            <h3>颈椎健康：中医理疗新发现</h3>
+                            <p>最新发现，定期进行特定穴位按摩可有效缓解办公族的颈椎不适...</p>
+                            <a href="news3.html" class="read-more">阅读全文 →</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 功能区域 -->
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">探索功能</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📋</div>
+                        <h3>个人档案</h3>
+                        <p>设定个人健康目标，记录成长历程，见证自信蜕变。</p>
+                        <a href="profile.html" class="btn btn-secondary">开始记录</a>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🥗</div>
+                        <h3>健康饮食</h3>
+                        <p>基于科学指南的饮食建议，健康食谱和营养知识。</p>
+                        <a href="diet.html" class="btn btn-secondary">了解更多</a>
+                    </div>
+                    <!-- 修复类名 -->
+                    <div class="feature-card">
+                        <div class="feature-icon">🏃‍♀️</div>
+                        <h3>健康锻炼</h3>
+                        <p>适合各种体型的锻炼方案，循序渐进，科学健身。</p>
+                        <a href="exercise.html" class="btn btn-secondary">开始锻炼</a>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🧠</div>
+                        <h3>心理支持</h3>
+                        <p>自信建设小贴士，积极心理学实践，压力管理技巧。</p>
+                        <a href="mental.html" class="btn btn-secondary">心灵成长</a>
+                    </div>
+                    <!-- 新增功能卡片 -->
+                    <div class="feature-card">
+                        <div class="feature-icon">📝</div>
+                        <h3>饮食打卡</h3>
+                        <p>记录每日饮食，追踪营养摄入，培养健康饮食习惯。</p>
+                        <a href="food-tracker.html" class="btn btn-secondary">开始打卡</a>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">✨</div>
+                        <h3>皮肤护理</h3>
+                        <p>中西结合的皮肤护理方案，内调外养，由内而外焕发美丽。</p>
+                        <a href="skincare.html" class="btn btn-secondary">护肤指南</a>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔢</div>
+                        <h3>卡路里计算</h3>
+                        <p>科学计算每日卡路里摄入与消耗，平衡饮食与运动。</p>
+                        <a href="calorie-calculator.html" class="btn btn-secondary">开始计算</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 用户故事区域 - 修复英文混入问题 -->
+        <section class="success-stories">
+            <div class="container">
+                <h2 class="section-title">用户故事</h2>
+                <div class="story-carousel">
+                    <div class="story-card">
+                        <div class="story-content">
+                            <p class="story-text">"通过'自在美丽'，我学会了接纳自己的身体，找到了健康减重的方法，现在的我不仅更健康，而且更加自信！"</p>
+                            <p class="story-author">— 小林，26岁</p>
+                        </div>
+                    </div>
+                    <!-- 添加更多用户故事 -->
+                    <div class="story-card">
+                        <div class="story-content">
+                            <p class="story-text">"作为一名IT从业者，长期久坐导致我腰部不适。通过'自在美丽'的职业健康方案，我学会了正确的坐姿和办公室运动，腰痛明显改善！"</p>
+                            <p class="story-author">— 张工，32岁</p>
+                        </div>
+                    </div>
+                    <div class="story-card">
+                        <div class="story-content">
+                            <p class="story-text">"以前总是盲目跟风各种护肤品，皮肤反而越来越差。跟着'自在美丽'的中医养生方案调理后，肌肤状态有了明显改善，也省下了不少钱！"</p>
+                            <p class="story-author">— 李娜，28岁</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-prev" aria-label="上一个故事" onclick="prevStory()">◀</button>
+                    <button class="carousel-next" aria-label="下一个故事" onclick="nextStory()">▶</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 职业健康专区 -->
+        <section class="occupation-health">
+            <div class="container">
+                <h2 class="section-title">职业健康专区</h2>
+                <p class="section-intro">不同职业面临不同的健康挑战，我们为您提供针对性的健康方案</p>
+                
+                <div class="occupation-grid">
+                    <div class="occupation-card">
+                        <div class="occupation-icon"><img src="images\办公室白领.jpeg" alt="办公室白领" onerror="this.src='images/default-icon.png'"></div>
+                        <h3>办公室白领</h3>
+                        <p>针对久坐、用眼过度、颈椎腰椎问题的解决方案</p>
+                        <a href="office-worker.html" class="btn btn-secondary">查看方案</a>
+                    </div>
+                    <div class="occupation-card">
+                        <div class="occupation-icon"><img src="images\工厂工人.jpeg" alt="工厂工人" onerror="this.src='images/default-icon.png'"></div>
+                        <h3>工厂工人</h3>
+                        <p>应对噪音、粉尘、长时间站立等职业危害的健康指南</p>
+                        <a href="factory-worker.html" class="btn btn-secondary">查看方案</a>
+                    </div>
+                    <div class="occupation-card">
+                        <div class="occupation-icon"><img src="images\司机.jpeg" alt="司机人群" onerror="this.src='images/default-icon.png'"></div>
+                        <h3>司机人群</h3>
+                        <p>缓解长时间驾驶带来的腰背疼痛和疲劳的方法</p>
+                        <a href="driver.html" class="btn btn-secondary">查看方案</a>
+                    </div>
+                    <div class="occupation-card">
+                        <div class="occupation-icon"><img src="images\医护人员.jpeg" alt="医护人员" onerror="this.src='images/default-icon.png'"></div>
+                        <h3>医护人员</h3>
+                        <p>应对高压工作、倒班和长时间站立的健康建议</p>
+                        <a href="healthcare-worker.html" class="btn btn-secondary">查看方案</a>
+                    </div>
+                    <div class="occupation-card">
+                        <div class="occupation-icon"><img src="images\教师人群.jpeg" alt="教师群体" onerror="this.src='images/default-icon.png'"></div>
+                        <h3>教师群体</h3>
+                        <p>保护嗓子、缓解精神压力和预防职业病的方法</p>
+                        <a href="teacher.html" class="btn btn-secondary">查看方案</a>
+                    </div>
+                    <div class="occupation-card">
+                        <div class="occupation-icon"><img src="images\IT工作者.jpeg" alt="IT从业者" onerror="this.src='images/default-icon.png'"></div>
+                        <h3>IT从业者</h3>
+                        <p>预防电脑辐射、缓解视疲劳和久坐问题的解决方案</p>
+                        <a href="it-professional.html" class="btn btn-secondary">查看方案</a>
+                    </div>
+                </div>
+                
+                <div class="occupation-custom">
+                    <h3>找不到您的职业？</h3>
+                    <p>告诉我们您的职业和健康困扰，我们将为您提供个性化的健康方案</p>
+                    <button class="btn btn-primary" id="custom-occupation-btn" onclick="openCustomForm()">定制专属方案</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 健康小贴士 -->
+        <section class="health-tips">
+            <div class="container">
+                <h2 class="section-title">每日健康小贴士</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <div class="tip-icon"><img src="images\饮食贴士.jpeg" alt="饮食贴士" class="rounded-image" onerror="this.src='images/default-tip.png'"></div>
+                        <h3>饮食平衡</h3>
+                        <p>中医五行饮食法：一餐中搭配五种颜色的食物，既美观又能均衡营养摄入。</p>
+                        <a href="diet-tips.html" class="read-more">了解更多 →</a>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon"><img src="images\优质睡眠.jpeg" alt="睡眠贴士" class="rounded-image" onerror="this.src='images/default-tip.png'"></div>
+                        <h3>优质睡眠</h3>
+                        <p>睡前泡脚10分钟，加入适量艾叶或薰衣草精油，有助于改善睡眠质量。</p>
+                        <a href="sleep-tips.html" class="read-more">了解更多 →</a>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon"><img src="images\八段锦运动.jpeg" alt="运动贴士" class="rounded-image" onerror="this.src='images/default-tip.png'"></div>
+                        <h3>适度运动</h3>
+                        <p>每天进行15分钟的八段锦练习，可以活动全身关节，增强体质。</p>
+                        <a href="exercise-tips.html" class="read-more">了解更多 →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 新增：四季养生专区 -->
+        <section class="seasonal-health">
+            <div class="container">
+                <h2 class="section-title">四季养生</h2>
+                <p class="section-intro">根据中医理论，顺应四季变化调整生活方式，才能达到身心平衡</p>
+                
+                <div class="season-tabs">
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" data-season="spring" onclick="showSeason('spring')">春季</button>
+                        <button class="tab-btn" data-season="summer" onclick="showSeason('summer')">夏季</button>
+                        <button class="tab-btn" data-season="autumn" onclick="showSeason('autumn')">秋季</button>
+                        <button class="tab-btn" data-season="winter" onclick="showSeason('winter')">冬季</button>
+                    </div>
+                    
+                    <div class="tab-content">
+                        <div class="season-content active" id="spring-content">
+                            <div class="season-image">
+                                <img src="images\image1.png" alt="春季养生" class="rounded-image" onerror="this.src='images/default-season.png'">
+                            </div>
+                            <div class="season-tips">
+                                <h3>春季养生要点</h3>
+                                <p>春季万物生发，养生应顺应阳气生发之势，注重肝脏调养。</p>
+                                <ul>
+                                    <li><strong>饮食调理：</strong>宜食用温性食物，如韭菜、春笋、荠菜等应季蔬菜</li>
+                                    <li><strong>起居调养：</strong>早睡早起，适当增加户外活动，舒展筋骨</li>
+                                    <li><strong>情志调摄：</strong>保持心情舒畅，避免情绪激动，尤其是怒气</li>
+                                    <li><strong>运动养生：</strong>适合做舒缓的伸展运动，如太极拳、八段锦</li>
+                                </ul>
+                                <a href="spring-health.html" class="btn btn-secondary">春季养生详解</a>
+                            </div>
+                        </div>
+                        
+                        <div class="season-content" id="summer-content">
+                            <div class="season-image">
+                                <img src="images\2.png" alt="夏季养生" class="rounded-image" onerror="this.src='images/default-season.png'">
+                            </div>
+                            <div class="season-tips">
+                                <h3>夏季养生要点</h3>
+                                <p>夏季阳气外发，养生应注重清热祛湿，保护心脏。</p>
+                                <ul>
+                                    <li><strong>饮食调理：</strong>宜食用清淡、利湿的食物，如苦瓜、绿豆、西瓜等</li>
+                                    <li><strong>起居调养：</strong>晚睡早起，注意防暑降温，保持室内通风</li>
+                                    <li><strong>情志调摄：</strong>保持心情愉悦，避免过度兴奋</li>
+                                    <li><strong>运动养生：</strong>适合清晨或傍晚进行轻度运动，如游泳、慢跑</li>
+                                </ul>
+                                <a href="summer-health.html" class="btn btn-secondary">夏季养生详解</a>
+                            </div>
+                        </div>
+                        
+                        <div class="season-content" id="autumn-content">
+                            <div class="season-image">
+                                <img src="images\image3.png" alt="秋季养生" class="rounded-image" onerror="this.src='images/default-season.png'">
+                            </div>
+                            <div class="season-tips">
+                                <h3>秋季养生要点</h3>
+                                <p>秋季气候干燥，养生应注重滋阴润燥，保护肺部。</p>
+                                <ul>
+                                    <li><strong>饮食调理：</strong>宜食用滋阴润肺的食物，如梨、百合、银耳等</li>
+                                    <li><strong>起居调养：</strong>早睡早起，注意保暖，预防感冒</li>
+                                    <li><strong>情志调摄：</strong>保持心情平和，避免忧郁情绪</li>
+                                    <li><strong>运动养生：</strong>适合做有氧运动，如快走、慢跑、太极拳</li>
+                                </ul>
+                                <a href="autumn-health.html" class="btn btn-secondary">秋季养生详解</a>
+                            </div>
+                        </div>
+                        
+                        <div class="season-content" id="winter-content">
+                            <div class="season-image">
+                                <img src="images\4.png" alt="冬季养生" class="rounded-image" onerror="this.src='images/default-season.png'">
+                            </div>
+                            <div class="season-tips">
+                                <h3>冬季养生要点</h3>
+                                <p>冬季万物闭藏，养生应注重温补固本，保护肾脏。</p>
+                                <ul>
+                                    <li><strong>饮食调理：</strong>宜食用温补食物，如羊肉、栗子、黑豆等</li>
+                                    <li><strong>起居调养：</strong>早睡晚起，保暖防寒，避免过度劳累</li>
+                                    <li><strong>情志调摄：</strong>保持内心平静，避免恐惧情绪</li>
+                                    <li><strong>运动养生：</strong>适合室内温和运动，如瑜伽、八段锦、室内慢走</li>
+                                </ul>
+                                <a href="winter-health.html" class="btn btn-secondary">冬季养生详解</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 新增：中医体质测试 -->
+        <section class="tcm-test">
+            <div class="container">
+                <h2 class="section-title">中医体质测试</h2>
+                <p class="section-intro">了解自己的体质类型，获取个性化的养生建议</p>
+                
+                <div class="test-content">
+                    <div class="test-intro">
+                        <div class="test-image">
+                            <img src="images\屏幕截图 2025-03-23 100550.png" alt="中医体质测试" class="rounded-image" onerror="this.src='images/placeholder.jpg'">
+                        </div>
+                        <div class="test-description">
+                            <h3>九种体质，对症调养</h3>
+                            <p>中医认为人的体质可分为九种基本类型：平和质、气虚质、阳虚质、阴虚质、痰湿质、湿热质、血瘀质、气郁质和特禀质。不同体质的人，在接受养生中应有不同的侧重点。</p>
+                            <p>通过我们专业的体质测试，您可以：</p>
+                            <ul>
+                                <li>了解自己的体质类型及特点</li>
+                                <li>获取针对性的饮食建议</li>
+                                <li>掌握适合自己的运动方式</li>
+                                <li>学习调理体质的中医方法</li>
+                            </ul>
+                            <a href="tcm-test.html" class="btn btn-primary">开始测试</a>
+                        </div>
+                    </div>
+                    
+                    <div class="constitution-types">
+                        <h3>九种体质简介</h3>
+                        <div class="type-cards">
+                            <div class="type-card">
+                                <h4>平和质</h4>
+                                <p>体形匀称，面色红润，精力充沛，抗病能力强，是最理想的体质。</p>
+                            </div>
+                            <div class="type-card">
+                                <h4>气虚质</h4>
+                                <p>常感疲乏无力，说话声音低弱，容易出汗，舌淡苔薄。</p>
+                            </div>
+                            <div class="type-card">
+                                <h4>阳虚质</h4>
+                                <p>怕冷，手脚发凉，面色偏白，喜热饮食，大便偏稀。</p>
+                            </div>
+                            <div class="type-card">
+                                <h4>阴虚质</h4>
+                                <p>手足心热，口干咽燥，面部潮红，大便干结，舌红少津。</p>
+                            </div>
+                            <div class="type-card">
+                                <h4>痰湿质</h4>
+                                <p>体形肥胖，腹部松软，面部油腻，口中黏腻，舌苔厚腻。</p>
+                            </div>
+                            <div class="type-card">
+                                <h4>湿热质</h4>
+                                <p>面垢油光，易生痤疮，口苦口臭，小便短黄，大便粘滞。</p>
+                            </div>
+                        </div>
+                        <a href="constitution-types.html" class="read-more">查看全部体质类型 →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- 加入社区区域 - 完善内容 -->
+        <section class="join-community">
+            <div class="container">
+                <div class="join-content">
+                    <h2>加入我们的社区</h2>
+                    <p>与志同道合的朋友一起，分享经验，互相鼓励，共同成长。</p>
+                    <div class="community-benefits">
+                        <div class="benefit-item">
+                            <div class="benefit-icon"><img src="images/community-icon1.png" alt="社区活动" onerror="this.src='images/default-icon.png'"></div>
+                            <p>参与线上线下健康活动</p>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon"><img src="images/community-icon2.png" alt="经验分享" onerror="this.src='images/default-icon.png'"></div>
+                            <p>分享健康心得与经验</p>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon"><img src="images/community-icon3.png" alt="专家指导" onerror="this.src='images/default-icon.png'"></div>
+                            <p>获得专家一对一指导</p>
+                        </div>
+                    </div>
+                    <a href="community.html" class="btn btn-primary">立即加入</a>
+                </div>
+                <div class="community-image">
+                    <img src="images/community.jpg" alt="社区活动照片" class="rounded-image" onerror="this.src='images/placeholder.jpg'">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>自在美丽</h2>
+                    <p>美丽源于自信，健康成就美丽</p>
+                </div>
+                <div class="footer-links">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="about.html">关于我们</a></li>
+                        <li><a href="contact.html">联系我们</a></li>
+                        <li><a href="privacy.html">隐私政策</a></li>
+                        <li><a href="terms.html">使用条款</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>订阅每周健康资讯</h3>
+                    <form class="newsletter-form" onsubmit="return subscribeNewsletter(event)">
+                        <input type="email" placeholder="您的邮箱地址" required>
+                        <button type="submit" class="btn btn-primary">订阅</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 自在美丽. 保留所有权利.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="微信"><img src="images/wechat.png" alt="微信" onerror="this.src='images/default-icon.png'"></a>
+                    <a href="#" aria-label="微博"><img src="images/weibo.png" alt="微博" onerror="this.src='images/default-icon.png'"></a>
+                    <a href="#" aria-label="抖音"><img src="images/douyin.png" alt="抖音" onerror="this.src='images/default-icon.png'"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 在body标签结束前整理script标签 -->
+    <script src="scripts.js"></script>
+    
+    <!-- 计时器相关代码 -->
+    <script>
+        let timerInterval;
+        let timeLeft = 0;
+        let isRunning = false;
+
+        let isCountUp = false;
+
+        function updateTimerDisplay() {
+            const minutes = Math.floor(Math.abs(timeLeft) / 60);
+            const seconds = Math.abs(timeLeft) % 60;
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            
+            const timerLabel = document.querySelector('.timer-label');
+            if (timerLabel) {
+                if (isRunning) {
+                    timerLabel.textContent = isCountUp ? '正计时中...' : '倒计时中...';
+                } else if (timeLeft === 0) {
+                    timerLabel.textContent = '准备开始';
+                } else {
+                    timerLabel.textContent = '已暂停';
+                }
+            }
+        }
+
+        function startTimer() {
+            if (!isRunning) {
+                isRunning = true;
+                // 如果timeLeft为0且没有预设时间，则启动正向计时
+                if (timeLeft === 0) {
+                    isCountUp = true;
+                }
+                }
+                timerInterval = setInterval(() => {
+                    if (isCountUp) {
+                        timeLeft++;  // 正向计时，时间增加
+                    } else {
+                        if (timeLeft > 0) {
+                            timeLeft--;  // 倒计时，时间减少
+                            if (timeLeft === 0) {
+                                clearInterval(timerInterval);
+                                isRunning = false;
+                                playTimerEndSound();
+                                showNotification('计时结束！');
+                            }
+                        }
+                    }
+                    updateTimerDisplay();
+                }, 1000);
+                updateTimerDisplay();
+            }
+        }
+
+        function pauseTimer() {
+            if (isRunning) {
+                clearInterval(timerInterval);
+                isRunning = false;
+                updateTimerDisplay();
+            }
+        }
+
+        function resetTimer() {
+            clearInterval(timerInterval);
+            isRunning = false;
+            isCountUp = false;  // 重置正向计时标志
+            timeLeft = 0;
+            updateTimerDisplay();
+        }
+
+        function setTimer(minutes) {
+            clearInterval(timerInterval);
+            isRunning = false;
+            isCountUp = false;  // 设置预设时间时关闭正向计时
+            timeLeft = minutes * 60;
+            updateTimerDisplay();
+        }
+
+        // 添加提示音效果
+        function playTimerEndSound() {
+            const audio = new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10...');  // 音频数据保持不变
+            audio.play();
+        }
+
+        // 添加通知提示
+        function showNotification(message) {
+            if (!("Notification" in window)) {
+                alert(message);
+                return;
+            }
+
+            if (Notification.permission === "granted") {
+                new Notification("计时器", { body: message });
+            } else if (Notification.permission !== "denied") {
+                Notification.requestPermission().then(function (permission) {
+                    if (permission === "granted") {
+                        new Notification("计时器", { body: message });
+                    }
+                });
+            }
+        }
+    </script>
+
+    <!-- 轮播功能代码 -->
+    <script>
+        let currentStoryIndex = 0;
+        const storyCards = document.querySelectorAll('.story-card');
+        
+        function showStory(index) {
+            // 移除所有故事的active类
+            storyCards.forEach(card => {
+                card.classList.remove('active');
+            });
+            // 添加active类到当前故事
+            storyCards[index].classList.add('active');
+        }
+        
+        function nextStory() {
+            currentStoryIndex = (currentStoryIndex + 1) % storyCards.length;
+            showStory(currentStoryIndex);
+        }
+        
+        function prevStory() {
+            currentStoryIndex = (currentStoryIndex - 1 + storyCards.length) % storyCards.length;
+            showStory(currentStoryIndex);
+        }
+        
+        // 初始化显示第一个故事
+        document.addEventListener('DOMContentLoaded', () => {
+            showStory(currentStoryIndex);
+        });
+    </script>
+
+    <!-- 樱花动画脚本 -->
+    <script>
+        class SakuraAnimation {
+            constructor() {
+                this.container = document.getElementById('sakura-container');
+                this.maxPetals = 30;
+                this.petals = [];
+                this.initialize();
+            }
+            
+            initialize() {
+                // 创建初始樱花
+                for (let i = 0; i < this.maxPetals; i++) {
+                    this.petals.push(this.createPetal());
+                }
+                this.animate();
+            }
+
+            createPetal() {
+                const petal = document.createElement('div');
+                petal.className = 'sakura';
+                
+                // 随机大小
+                const size = 10 + Math.random() * 10;
+                petal.style.width = `${size}px`;
+                petal.style.height = `${size}px`;
+                
+                // 初始位置
+                petal.style.left = `${Math.random() * window.innerWidth}px`;
+                petal.style.top = `-${size}px`;
+                
+                this.container.appendChild(petal);
+                
+                return {
+                    element: petal,
+                    x: parseFloat(petal.style.left),
+                    y: parseFloat(petal.style.top),
+                    speed: 1 + Math.random() * 2,
+                    swing: Math.random() * 4 - 2,
+                    rotation: Math.random() * 360,
+                    rotationSpeed: Math.random() * 2 - 1
+                };
+            }
+
+            animate() {
+                this.petals.forEach((petal, index) => {
+                    // 更新位置
+                    petal.y += petal.speed;
+                    petal.x += petal.swing;
+                    petal.rotation += petal.rotationSpeed;
+                    
+                    // 应用新位置和旋转
+                    petal.element.style.transform = `translate(${petal.x}px, ${petal.y}px) rotate(${petal.rotation}deg)`;
+                    
+                    // 如果樱花飘出屏幕，重新创建
+                    if (petal.y > window.innerHeight || petal.x < -50 || petal.x > window.innerWidth + 50) {
+                        petal.element.remove();
+                        this.petals[index] = this.createPetal();
+                    }
+                });
+                
+                requestAnimationFrame(() => this.animate());
+            }
+        }
+        
+        // 页面加载完成后启动动画
+        window.addEventListener('load', () => {
+            new SakuraAnimation();
+        });
+    </script>
+</body>
+</html>
